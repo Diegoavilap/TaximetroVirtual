@@ -71,8 +71,7 @@ pipeline {
       echo 'This will always run'
     }
     success {
-      echo 'This will run only if successful'
-      junit './TaximetroVirtual/build/test-results/test/*.xml' 
+      echo 'This will run only if successful' 
     }
     failure {
       echo 'This will run only if failed'
