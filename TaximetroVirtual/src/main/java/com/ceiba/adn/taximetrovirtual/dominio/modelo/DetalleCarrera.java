@@ -42,12 +42,10 @@ public class DetalleCarrera {
 	}
 	
 	public BigDecimal calcularCosto() {
-		BigDecimal costoTotal = new BigDecimal(0);
 		BigDecimal tarifaPorMinuto = calcularTarifaPorMinuto();
 		Long tiempoDuracionCarrera = Duration.between(carrera.getFechaInicio(), fechaFin).toMinutes(); 
 				
-		costoTotal = tarifaPorMinuto.multiply(new BigDecimal(tiempoDuracionCarrera));
-		return costoTotal;
+		return tarifaPorMinuto.multiply(new BigDecimal(tiempoDuracionCarrera));
 	}
 
 	private BigDecimal calcularTarifaPorMinuto() {

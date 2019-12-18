@@ -22,4 +22,5 @@ public class DetalleCarreraTest {
 		// assert
 		assertEquals(costoCarrera, new BigDecimal(10000));
 	}
+	
 }
