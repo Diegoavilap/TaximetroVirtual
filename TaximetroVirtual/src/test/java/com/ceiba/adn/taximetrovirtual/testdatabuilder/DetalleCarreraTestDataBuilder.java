@@ -10,7 +10,6 @@ public class DetalleCarreraTestDataBuilder {
 
 	private Long id;
 	private Carrera carrera;
-	private String estado;
 	private LocalDateTime fechaFin;
 	private BigDecimal costo;
 	
@@ -18,8 +17,7 @@ public class DetalleCarreraTestDataBuilder {
 	public DetalleCarreraTestDataBuilder() {
 		
 		this.id = 1L;
-		this.carrera = new Carrera(1L, "1104675876", LocalDateTime.of(2019, 12, 16, 6, 0));
-		this.estado = "ACTIVA";
+		this.carrera = new Carrera(1L, 1104675876L, LocalDateTime.of(2019, 12, 16, 6, 0));
 		this.fechaFin = LocalDateTime.of(2019, 12, 16, 6, 25);
 		this.costo = new BigDecimal(0);
 		
@@ -35,12 +33,6 @@ public class DetalleCarreraTestDataBuilder {
 		this.carrera = carrera;
 	}
 
-
-	public void conEstado(String estado) {
-		this.estado = estado;
-	}
-
-
 	public void conFechaFin(LocalDateTime fechaFin) {
 		this.fechaFin = fechaFin;
 	}
@@ -51,7 +43,7 @@ public class DetalleCarreraTestDataBuilder {
 	}
 	
 	public DetalleCarrera build() {
-		return new DetalleCarrera(id, carrera, estado, fechaFin, costo);
+		return new DetalleCarrera(id, carrera, fechaFin, costo);
 	}
 
 	

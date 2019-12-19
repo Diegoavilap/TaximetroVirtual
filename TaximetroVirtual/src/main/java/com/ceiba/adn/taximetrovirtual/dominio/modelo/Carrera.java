@@ -4,12 +4,12 @@ import java.time.LocalDateTime;
 
 public class Carrera {
 	private Long id;
-	private String cedulaCliente;
+	private Long idCliente;
 	private LocalDateTime fechaInicio;
 	
-	public Carrera( Long id, String cedulaCliente, LocalDateTime fechaInicio) {
+	public Carrera( Long id, Long idCliente, LocalDateTime fechaInicio) {
 		this.id = id;
-		this.cedulaCliente = cedulaCliente;
+		this.idCliente = idCliente;
 		this.fechaInicio = fechaInicio;
 	}
 	
@@ -17,8 +17,8 @@ public class Carrera {
 		return id;
 	}
 	
-	public String getCedulaCliente() {
-		return cedulaCliente;
+	public Long getidCliente() {
+		return idCliente;
 	}
 	
 	public LocalDateTime getFechaInicio() {
