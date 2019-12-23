@@ -30,7 +30,7 @@ pipeline {
           gitTool: 'Git_Centos',
           submoduleCfg: [],
           userRemoteConfigs: [[
-            credentialsId: 'GitHub_diego.avila',
+            credentialsId: 'GitHub_diegoavilap',
             url:'https://github.com/Diegoavilap/TaximetroVirtual/'
           ]]
         ])

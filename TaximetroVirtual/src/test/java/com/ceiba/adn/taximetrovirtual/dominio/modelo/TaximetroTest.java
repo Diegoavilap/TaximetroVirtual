@@ -8,7 +8,6 @@ import java.time.LocalDateTime;
 import org.junit.Test;
 
 import com.ceiba.adn.taximetrovirtual.testdatabuilder.CarreraTestDataBuilder;
-import com.ceiba.adn.taximetrovirtual.testdatabuilder.DetalleCarreraTestDataBuilder;
 
 
 public class TaximetroTest {

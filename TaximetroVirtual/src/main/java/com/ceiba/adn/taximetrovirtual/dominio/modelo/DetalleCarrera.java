@@ -1,8 +1,6 @@
 package com.ceiba.adn.taximetrovirtual.dominio.modelo;
 
 import java.math.BigDecimal;
-import java.time.DayOfWeek;
-import java.time.Duration;
 import java.time.LocalDateTime;
 
 public class DetalleCarrera {
