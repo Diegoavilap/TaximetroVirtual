@@ -15,16 +15,19 @@ public class CarreraTestDataBuilder {
 		this.fechaInicio = LocalDateTime.of(2019, 12, 16, 6, 0);;
 	}
 
-	public void conId(Long id) {
+	public CarreraTestDataBuilder conId(Long id) {
 		this.id = id;
+		return this;
 	}
 
-	public void conIdCliente(Long idCliente) {
+	public CarreraTestDataBuilder conIdCliente(Long idCliente) {
 		this.idCliente = idCliente;
+		return this;
 	}
 
-	public void conFechaInicio(LocalDateTime fechaInicio) {
+	public CarreraTestDataBuilder conFechaInicio(LocalDateTime fechaInicio) {
 		this.fechaInicio = fechaInicio;
+		return this;
 	}
 	
 	public Carrera build() {

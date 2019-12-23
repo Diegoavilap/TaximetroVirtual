@@ -1,25 +1,30 @@
-package com.ceiba.adn.taximetrovirtual.dominio.modelo;
+package com.ceiba.adn.taximetrovirtual.dominio.servicio;
 
 import java.math.BigDecimal;
 import java.time.DayOfWeek;
 import java.time.Duration;
 import java.time.LocalDateTime;
 
-public class Taximetro {
+import com.ceiba.adn.taximetrovirtual.dominio.modelo.Carrera;
 
+public final class Taximetro {
+
+	private Taximetro() {
+		throw new AssertionError("Esta clase no debe ser instanciada");
+	}
 	
-	public BigDecimal calcularCosto(Carrera carrera, LocalDateTime fechaFin) {
+	public static BigDecimal calcularCosto(Carrera carrera, LocalDateTime fechaFin) {
 		BigDecimal tarifaPorMinuto = calcularTarifaPorMinuto(carrera);
 		Long tiempoDuracionCarrera = Duration.between(carrera.getFechaInicio(), fechaFin).toMinutes(); 
 				
 		return tarifaPorMinuto.multiply(new BigDecimal(tiempoDuracionCarrera));
 	}
 
-	private BigDecimal calcularTarifaPorMinuto(Carrera carrera) {
+	private static BigDecimal calcularTarifaPorMinuto(Carrera carrera) {
 		BigDecimal tarifaPorMinuto;
 		
 		if(esHorarioDe18a20Horas(carrera)) {
-			
+
 			tarifaPorMinuto = new BigDecimal(600);
 			
 		}else if (esHorario20a5Horas(carrera)) {
@@ -38,15 +43,15 @@ public class Taximetro {
 		return tarifaPorMinuto;
 	}
 
-	private boolean esHorario20a5Horas(Carrera carrera) {
-		return carrera.getFechaInicio().getHour() >= 20 && carrera.getFechaInicio().getHour() < 5;
+	private static boolean esHorario20a5Horas(Carrera carrera) {
+		return carrera.getFechaInicio().getHour() >= 20 || carrera.getFechaInicio().getHour() < 5;
 	}
 
-	private boolean esHorarioDe18a20Horas(Carrera carrera) {
+	private static boolean esHorarioDe18a20Horas(Carrera carrera) {
 		return carrera.getFechaInicio().getHour() >= 18 && carrera.getFechaInicio().getHour() < 20;
 	}
 
-	private boolean esFinDeSemana(LocalDateTime fecha) {
+	private static boolean esFinDeSemana(LocalDateTime fecha) {
 		return fecha.getDayOfWeek().equals(DayOfWeek.SATURDAY) || fecha.getDayOfWeek().equals(DayOfWeek.SUNDAY);
 	}
 }

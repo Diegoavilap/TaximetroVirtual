@@ -24,22 +24,26 @@ public class DetalleCarreraTestDataBuilder {
 	}
 
 
-	public void conId(Long id) {
+	public DetalleCarreraTestDataBuilder conId(Long id) {
 		this.id = id;
+		return this;
 	}
 
 
-	public void conCarrera(Carrera carrera) {
+	public DetalleCarreraTestDataBuilder conCarrera(Carrera carrera) {
 		this.carrera = carrera;
+		return this;
 	}
 
-	public void conFechaFin(LocalDateTime fechaFin) {
+	public DetalleCarreraTestDataBuilder conFechaFin(LocalDateTime fechaFin) {
 		this.fechaFin = fechaFin;
+		return this;
 	}
 
 
-	public void conCosto(BigDecimal costo) {
+	public DetalleCarreraTestDataBuilder conCosto(BigDecimal costo) {
 		this.costo = costo;
+		return this;
 	}
 	
 	public DetalleCarrera build() {
