@@ -12,7 +12,7 @@ public final class Taximetro {
 	private Taximetro() {
 		throw new AssertionError("Esta clase no debe ser instanciada");
 	}
-	
+
 	public static BigDecimal calcularCosto(Carrera carrera, LocalDateTime fechaFin) {
 		BigDecimal tarifaPorMinuto = calcularTarifaPorMinuto(carrera);
 		Long tiempoDuracionCarrera = Duration.between(carrera.getFechaInicio(), fechaFin).toMinutes(); 

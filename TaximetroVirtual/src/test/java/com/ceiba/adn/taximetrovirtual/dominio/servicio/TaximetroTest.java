@@ -33,7 +33,7 @@ public class TaximetroTest {
 		LocalDateTime fechaInicioCarreraEntre18y20Horas = LocalDateTime.of(2019, 12, 16, 19, 0);
 		Carrera carreraTestBuilder = new CarreraTestDataBuilder()
 											.conFechaInicio( fechaInicioCarreraEntre18y20Horas).build();
-		LocalDateTime fechaFinalCarrera = LocalDateTime.of(2019, 12, 16, 19, 59);
+		LocalDateTime fechaFinalCarrera = fechaInicioCarreraEntre18y20Horas.plusMinutes(59);
 
 		// act
 		BigDecimal costoCarrera  = Taximetro.calcularCosto(carreraTestBuilder, fechaFinalCarrera);
@@ -49,8 +49,7 @@ public class TaximetroTest {
 		Carrera carreraTestBuilder = new CarreraTestDataBuilder()
 											.conFechaInicio(fechaInicioCarreraEntre21y5Horas)
 											.build();
-		LocalDateTime fechaFinalCarrera = LocalDateTime.of(2019, 12, 16, 23, 0);
-		
+		LocalDateTime fechaFinalCarrera = fechaInicioCarreraEntre21y5Horas.plusMinutes(120);
 		// act
 		BigDecimal costoCarrera = Taximetro.calcularCosto(carreraTestBuilder, fechaFinalCarrera);
 		
@@ -72,7 +71,38 @@ public class TaximetroTest {
 		BigDecimal costoCarrera = Taximetro.calcularCosto(carreraTestBuilder, fechaFinalCarrera);
 		
 		// assert
-		assertEquals(costoCarrera, new BigDecimal(36000));
+		assertEquals(costoCarrera, new BigDecimal(36000));		
+	}
+	
+	@Test
+	public void calcularCostoDiaTestFinDeSemanaYHorario20a5() {
+		// arrange
+		LocalDateTime fechaInicioFinDeSemanaHorarioDiurno = LocalDateTime.of(2019, 12, 21, 3, 0);
+		Carrera carreraTestBuilder = new CarreraTestDataBuilder()
+											.conFechaInicio(fechaInicioFinDeSemanaHorarioDiurno)
+											.build();
+		LocalDateTime fechaFinalCarrera = fechaInicioFinDeSemanaHorarioDiurno.plusMinutes(85);
 		
+		// act
+		BigDecimal costoCarrera = Taximetro.calcularCosto(carreraTestBuilder, fechaFinalCarrera);
+		
+		// assert
+		assertEquals(costoCarrera, new BigDecimal(59500));		
+	}
+	
+	@Test
+	public void calcularCostoDiaTestDomingoYHorarioDiurno() {
+		// arrange
+		LocalDateTime fechaInicioFinDeSemanaHorarioDiurno = LocalDateTime.of(2019, 12, 22,11, 0);
+		Carrera carreraTestBuilder = new CarreraTestDataBuilder()
+											.conFechaInicio(fechaInicioFinDeSemanaHorarioDiurno)
+											.build();
+		LocalDateTime fechaFinalCarrera = fechaInicioFinDeSemanaHorarioDiurno.plusMinutes(240);
+		
+		// act
+		BigDecimal costoCarrera = Taximetro.calcularCosto(carreraTestBuilder, fechaFinalCarrera);
+		
+		// assert
+		assertEquals(costoCarrera, new BigDecimal(120000));		
 	}
 }
