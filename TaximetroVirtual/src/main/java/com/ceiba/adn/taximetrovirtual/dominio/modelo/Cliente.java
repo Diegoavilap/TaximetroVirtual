@@ -2,6 +2,8 @@ package com.ceiba.adn.taximetrovirtual.dominio.modelo;
 
 import java.util.Objects;
 
+import com.ceiba.adn.taximetrovirtual.dominio.servicio.ValidarDatos;
+
 public class Cliente {
 	private Long id;
 	private String cedula;
@@ -11,7 +13,10 @@ public class Cliente {
 	
 	public Cliente (Long id, String cedula, String nombre, String apellido) {
 		this.id = id;
-		this.cedula = Objects.requireNonNull(cedula);
+		
+		ValidarDatos.validarCedula(Objects.requireNonNull(cedula));
+		
+		this.cedula = cedula;
 		this.nombre = Objects.requireNonNull(nombre);
 		this.apellido = Objects.requireNonNull(apellido);
 	}

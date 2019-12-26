@@ -3,6 +3,8 @@ package com.ceiba.adn.taximetrovirtual.dominio.modelo;
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
 
+import com.ceiba.adn.taximetrovirtual.dominio.servicio.ValidarFechas;
+
 public class DetalleCarrera {
 	
 	private Long id;
@@ -11,6 +13,10 @@ public class DetalleCarrera {
 	private BigDecimal costo;
 	
 	public DetalleCarrera(Long id, Carrera carrera, LocalDateTime fechaFin, BigDecimal costo) {
+		
+		ValidarFechas.validarFechaFinalPosteriorAFechaInicial(fechaFin, carrera.getFechaInicio());
+		
+		
 		this.id = id;
 		this.carrera = carrera;
 		this.fechaFin = fechaFin;

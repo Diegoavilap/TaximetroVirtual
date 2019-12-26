@@ -105,4 +105,19 @@ public class TaximetroTest {
 		// assert
 		assertEquals(costoCarrera, new BigDecimal(120000));		
 	}
+	
+	@Test
+	public void calcularCostoConFechaInicioYFechaFinalIgualDomingoHorarioDiurno() {
+		// arrange
+		LocalDateTime fechaInicioYFechaFin = LocalDateTime.of(2019, 12, 22,12, 0);
+		Carrera carreraTestBuilder = new CarreraTestDataBuilder()
+											.conFechaInicio(fechaInicioYFechaFin)
+											.build();
+		
+		// act
+		BigDecimal costoCarrera = Taximetro.calcularCosto(carreraTestBuilder, fechaInicioYFechaFin);
+		
+		// assert
+		assertEquals(costoCarrera, new BigDecimal(500));		
+	}
 }

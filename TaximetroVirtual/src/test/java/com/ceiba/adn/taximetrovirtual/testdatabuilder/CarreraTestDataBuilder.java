@@ -12,7 +12,7 @@ public class CarreraTestDataBuilder {
 	public CarreraTestDataBuilder() {
 		this.id = 2L;
 		this.idCliente = 1105676543L;
-		this.fechaInicio = LocalDateTime.of(2019, 12, 16, 6, 0);;
+		this.fechaInicio = LocalDateTime.of(2019, 12, 16, 6, 0);
 	}
 
 	public CarreraTestDataBuilder conId(Long id) {
