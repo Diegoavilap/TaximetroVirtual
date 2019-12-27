@@ -2,7 +2,7 @@ package com.ceiba.adn.taximetrovirtual.dominio.servicio;
 
 import java.time.LocalDateTime;
 
-public class ValidarFechas {
+public final class ValidarFechas {
 	private static final String MSG_LA_FECHA_FINAL_NO_PUEDE_SER_ANTERIOR_A_LA_FECHA_INICIAL = "La Fecha Final no puede ser anterior a la Fecha Inicial";
 
 	private ValidarFechas() {
