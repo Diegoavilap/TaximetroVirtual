@@ -1,5 +1,6 @@
 package com.ceiba.adn.taximetrovirtual.aplicacion.servicio;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -11,7 +12,7 @@ import com.ceiba.adn.taximetrovirtual.dominio.puerto.repositorio.RepositorioClie
 /**
  * Clase para definir el servicio de creación de cliente
  * 
- * @author martosfre
+ * @author diego.avila
  *
  */
 @Service
@@ -19,6 +20,7 @@ public class ServicioCrearCliente {
 
 	private final RepositorioCliente repositorioCliente;
 
+	
 	public ServicioCrearCliente(RepositorioCliente repositorioCliente) {
 		this.repositorioCliente = repositorioCliente;
 	}

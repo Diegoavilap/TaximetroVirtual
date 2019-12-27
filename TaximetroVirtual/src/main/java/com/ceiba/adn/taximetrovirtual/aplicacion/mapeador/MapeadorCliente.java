@@ -7,6 +7,7 @@ package com.ceiba.adn.taximetrovirtual.aplicacion.mapeador;
 
 import com.ceiba.adn.taximetrovirtual.aplicacion.dto.ClienteDTO;
 import com.ceiba.adn.taximetrovirtual.dominio.modelo.Cliente;
+import com.ceiba.adn.taximetrovirtual.infraestructura.adaptador.repositorio.entidad.ClienteEntidad;
 
 /**
  * Clase encargada de mapear una clase Cliente a su respectivo ClienteDTO y viceversa
@@ -25,11 +26,9 @@ public final class MapeadorCliente {
 	 * @param ClienteDTO clienteDTO
 	 * @return Cliente
 	 */
-	public static Cliente mapearAModelo(ClienteDTO clienteDTO) {
-		return new Cliente(clienteDTO.getId(), 
-						clienteDTO.getCedula(), 
-						clienteDTO.getNombre(),
-						clienteDTO.getApellido());
+	public static ClienteEntidad mapearAModelo(ClienteDTO clienteDTO) {
+		ClienteEntidad entidadCliente = new ClienteEntidad().setId(clienteDTO.getId());
+		return entidadCliente;
 	}
 	
 	/**
