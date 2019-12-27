@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.ceiba.adn.taximetrovirtual.aplicacion.dto.ClienteDTO;
+import com.ceiba.adn.taximetrovirtual.aplicacion.mapeador.ClienteDTO;
 import com.ceiba.adn.taximetrovirtual.aplicacion.servicio.ServicioCrearCliente;
 import com.ceiba.adn.taximetrovirtual.infraestructura.adaptador.repositorio.entidad.ClienteEntidad;
 
