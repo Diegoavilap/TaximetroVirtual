@@ -3,6 +3,8 @@ package com.ceiba.adn.taximetrovirtual.aplicacion.servicio;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import com.ceiba.adn.taximetrovirtual.aplicacion.dto.ClienteDTO;
+import com.ceiba.adn.taximetrovirtual.aplicacion.mapeador.MapeadorCliente;
 import com.ceiba.adn.taximetrovirtual.dominio.puerto.repositorio.RepositorioCliente;
 import com.ceiba.adn.taximetrovirtual.infraestructura.adaptador.repositorio.entidad.ClienteEntidad;
 
@@ -27,9 +29,9 @@ public class ServicioCrearCliente {
 	 * @return
 	 */
 	@Transactional
-	public ClienteEntidad ejecutar(ClienteEntidad cliente) {
-		//ClienteEntidad cliente = MapeadorCliente.mapearAModelo(clienteDTO);
-		return this.repositorioCliente.save(cliente);
+	public ClienteEntidad ejecutar(ClienteDTO clienteDTO) {
+		ClienteEntidad clienteEntidad = MapeadorCliente.mapearAModelo(clienteDTO);
+		return this.repositorioCliente.save(clienteEntidad);
 	}
 
 }

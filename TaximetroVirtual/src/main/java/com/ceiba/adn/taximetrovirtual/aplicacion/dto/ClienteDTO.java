@@ -1,24 +1,21 @@
-package com.ceiba.adn.taximetrovirtual.aplicacion.mapeador;
+package com.ceiba.adn.taximetrovirtual.aplicacion.dto;
 
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 public class ClienteDTO {
-	
+
 	private Long id;
 
 	private String cedula;
 
 	private String nombre;
-	
+
 	private String apellido;
 
-	
 	@JsonCreator
-	public ClienteDTO(@JsonProperty("id") Long id, 
-			@JsonProperty("cedula")  String cedula, 
-			@JsonProperty("nombre") String nombre, 
-			@JsonProperty("apellido") String apellido) {
+	public ClienteDTO(@JsonProperty("id") Long id, @JsonProperty("cedula") String cedula,
+			@JsonProperty("nombre") String nombre, @JsonProperty("apellido") String apellido) {
 		this.id = id;
 		this.cedula = cedula;
 		this.nombre = nombre;
@@ -56,5 +53,5 @@ public class ClienteDTO {
 	public void setApellido(String apellido) {
 		this.apellido = apellido;
 	}
-	
+
 }

@@ -4,27 +4,25 @@ import java.time.LocalDateTime;
 
 public class Carrera {
 	private Long id;
-	private Long idCliente;
+	private Long clienteId;
 	private LocalDateTime fechaInicio;
-	
-	public Carrera( Long id, Long idCliente, LocalDateTime fechaInicio) {
+
+	public Carrera(Long id, Long clienteId, LocalDateTime fechaInicio) {
 		this.id = id;
-		this.idCliente = idCliente;
+		this.clienteId = clienteId;
 		this.fechaInicio = fechaInicio;
 	}
-	
+
 	public Long getId() {
 		return id;
 	}
-	
-	public Long getidCliente() {
-		return idCliente;
+
+	public Long getClienteId() {
+		return clienteId;
 	}
-	
+
 	public LocalDateTime getFechaInicio() {
 		return fechaInicio;
 	}
-	
-	
-	
+
 }

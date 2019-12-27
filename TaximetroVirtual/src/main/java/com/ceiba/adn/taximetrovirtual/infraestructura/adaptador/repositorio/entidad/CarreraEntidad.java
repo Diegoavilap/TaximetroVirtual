@@ -12,11 +12,10 @@ import javax.persistence.ManyToOne;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
-
 @Entity
 @Table(name = "CARRERA")
 public class CarreraEntidad {
-	
+
 	public CarreraEntidad() {
 		// TODO Auto-generated constructor stub
 	}
@@ -26,10 +25,9 @@ public class CarreraEntidad {
 	@Column(name = "ID")
 	private Long id;
 
-	
 	@ManyToOne
-	@JoinColumn(name="CLIENTE_ID")
-	private ClienteEntidad cliente;
+	@JoinColumn(name = "CLIENTE_ID")
+	private ClienteEntidad clienteId;
 
 	@Column(name = "fechaInicio")
 	private LocalDateTime fechaInicio;
@@ -41,8 +39,8 @@ public class CarreraEntidad {
 		return id;
 	}
 
-	public ClienteEntidad getCliente() {
-		return cliente;
+	public ClienteEntidad getClienteId() {
+		return clienteId;
 	}
 
 	public LocalDateTime getFechaInicio() {
@@ -57,8 +55,8 @@ public class CarreraEntidad {
 		this.id = id;
 	}
 
-	public void setCliente(ClienteEntidad cliente) {
-		this.cliente = cliente;
+	public void setClienteId(ClienteEntidad clienteId) {
+		this.clienteId = clienteId;
 	}
 
 	public void setFechaInicio(LocalDateTime fechaInicio) {
@@ -67,8 +65,6 @@ public class CarreraEntidad {
 
 	public void setDetalleCarrera(DetalleCarreraEntidad detalleCarrera) {
 		this.detalleCarrera = detalleCarrera;
-	}	
-	
-	
-	
+	}
+
 }

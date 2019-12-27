@@ -7,13 +7,11 @@ public class Cliente {
 	private String cedula;
 	private String nombre;
 	private String apellido;
-	
-	
-	public Cliente (Long id, String cedula, String nombre, String apellido) {
-		this.id = id;
-		
+
+	public Cliente(Long id, String cedula, String nombre, String apellido) {
 		ValidarDatos.validarCedula(cedula);
 		
+		this.id = id;
 		this.cedula = cedula;
 		this.nombre = nombre;
 		this.apellido = apellido;
@@ -22,11 +20,11 @@ public class Cliente {
 	public Long getId() {
 		return id;
 	}
-	
+
 	public String getCedula() {
 		return cedula;
 	}
-	
+
 	public String getNombre() {
 		return nombre;
 	}
@@ -34,7 +32,5 @@ public class Cliente {
 	public String getApellido() {
 		return apellido;
 	}
-
-	
 
 }

@@ -12,9 +12,9 @@ import javax.persistence.Table;
 public class ClienteEntidad {
 
 	public ClienteEntidad() {
-		//TODO
+		// TODO
 	}
-	
+
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	@Column(name = "ID")
@@ -25,11 +25,10 @@ public class ClienteEntidad {
 
 	@Column(name = "NOMBRE")
 	private String nombre;
-	
+
 	@Column(name = "APELLIDO")
 	private String apellido;
 
-	
 	public Long getId() {
 		return id;
 	}
@@ -61,6 +60,5 @@ public class ClienteEntidad {
 	public void setApellido(String apellido) {
 		this.apellido = apellido;
 	}
-	
-	
+
 }
