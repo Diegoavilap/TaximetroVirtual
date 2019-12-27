@@ -17,6 +17,10 @@ import javax.persistence.Table;
 @Table(name = "CARRERA")
 public class CarreraEntidad {
 	
+	public CarreraEntidad() {
+		// TODO Auto-generated constructor stub
+	}
+
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	@Column(name = "ID")
@@ -31,6 +35,40 @@ public class CarreraEntidad {
 	private LocalDateTime fechaInicio;
 
 	@OneToOne(mappedBy = "carrera")
-	private DetalleCarreraEntidad detalleCarrera;	
+	private DetalleCarreraEntidad detalleCarrera;
+
+	public Long getId() {
+		return id;
+	}
+
+	public ClienteEntidad getCliente() {
+		return cliente;
+	}
+
+	public LocalDateTime getFechaInicio() {
+		return fechaInicio;
+	}
+
+	public DetalleCarreraEntidad getDetalleCarrera() {
+		return detalleCarrera;
+	}
+
+	public void setId(Long id) {
+		this.id = id;
+	}
+
+	public void setCliente(ClienteEntidad cliente) {
+		this.cliente = cliente;
+	}
+
+	public void setFechaInicio(LocalDateTime fechaInicio) {
+		this.fechaInicio = fechaInicio;
+	}
+
+	public void setDetalleCarrera(DetalleCarreraEntidad detalleCarrera) {
+		this.detalleCarrera = detalleCarrera;
+	}	
+	
+	
 	
 }

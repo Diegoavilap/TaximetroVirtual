@@ -17,6 +17,10 @@ import javax.persistence.Table;
 public class DetalleCarreraEntidad {
 
 	
+	public DetalleCarreraEntidad() {
+		// TODO Auto-generated constructor stub
+	}
+
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	@Column(name = "ID")
@@ -33,6 +37,38 @@ public class DetalleCarreraEntidad {
 	
 	@Column(name = "COSTO")
 	private BigDecimal costo;
+
+	public Long getId() {
+		return id;
+	}
+
+	public CarreraEntidad getCarrera() {
+		return carrera;
+	}
+
+	public String getFechaFin() {
+		return fechaFin;
+	}
+
+	public BigDecimal getCosto() {
+		return costo;
+	}
+
+	public void setId(Long id) {
+		this.id = id;
+	}
+
+	public void setCarrera(CarreraEntidad carrera) {
+		this.carrera = carrera;
+	}
+
+	public void setFechaFin(String fechaFin) {
+		this.fechaFin = fechaFin;
+	}
+
+	public void setCosto(BigDecimal costo) {
+		this.costo = costo;
+	}
 
 	
 }

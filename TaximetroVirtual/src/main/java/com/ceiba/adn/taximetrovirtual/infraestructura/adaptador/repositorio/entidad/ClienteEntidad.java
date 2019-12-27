@@ -12,6 +12,7 @@ import javax.persistence.Table;
 public class ClienteEntidad {
 
 	public ClienteEntidad() {
+		//TODO
 	}
 	
 	@Id
@@ -28,6 +29,7 @@ public class ClienteEntidad {
 	@Column(name = "APELLIDO")
 	private String apellido;
 
+	
 	public Long getId() {
 		return id;
 	}

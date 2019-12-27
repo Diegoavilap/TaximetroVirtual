@@ -8,15 +8,5 @@ import com.ceiba.adn.taximetrovirtual.infraestructura.adaptador.repositorio.enti
 
 @Repository
 public interface RepositorioCliente extends JpaRepository<ClienteEntidad, Long>{
-/*
-	public Long crear(Cliente cliente);
-
-	public void actualizar(Cliente cliente);
-
-	public Optional<Cliente> buscarPorIdCliente(Long id);
-
-	public Optional<Cliente> buscarPorCedula(String cedula);
-
-	public List<Cliente> listar();
-*/
+	
 }
