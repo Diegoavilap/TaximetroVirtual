@@ -8,8 +8,8 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.ceiba.adn.taximetrovirtual.aplicacion.dto.ClienteDTO;
 import com.ceiba.adn.taximetrovirtual.aplicacion.servicio.ServicioCrearCliente;
-import com.ceiba.adn.taximetrovirtual.dominio.modelo.Cliente;
 import com.ceiba.adn.taximetrovirtual.infraestructura.adaptador.repositorio.entidad.ClienteEntidad;
 
 import io.swagger.annotations.Api;
@@ -39,7 +39,7 @@ public class ClienteController {
 	@ApiOperation(value = "Crear Cliente", notes = "Servicio para Crear un Cliente")
 	@ApiResponses(value = { @ApiResponse(code = 201, message = "Cliente Creado Exitosamente"),
 			@ApiResponse(code = 400, message = "Solicitud invalida") })
-	public ResponseEntity<ClienteEntidad> crearCliente(@RequestBody Cliente cliente){
+	public ResponseEntity<ClienteEntidad> crearCliente(@RequestBody ClienteDTO cliente){
 		ClienteEntidad clienteEntidad = new ClienteEntidad();
 		clienteEntidad.setId(cliente.getId());
 		clienteEntidad.setCedula(cliente.getCedula());
