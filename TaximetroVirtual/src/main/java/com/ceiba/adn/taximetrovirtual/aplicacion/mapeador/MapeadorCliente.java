@@ -1,7 +1,7 @@
 package com.ceiba.adn.taximetrovirtual.aplicacion.mapeador;
 
 import com.ceiba.adn.taximetrovirtual.aplicacion.dto.ClienteDTO;
-import com.ceiba.adn.taximetrovirtual.infraestructura.adaptador.repositorio.entidad.ClienteEntidad;
+import com.ceiba.adn.taximetrovirtual.dominio.modelo.Cliente;
 
 public class MapeadorCliente {
 
@@ -9,33 +9,28 @@ public class MapeadorCliente {
 	}
 
 	/**
-	 * Funcion encargada de convertir una clase ClienteEntidad a ClienteDTO
+	 * Funcion encargada de convertir una clase Clientea ClienteDTO
 	 * 
-	 * @param ClienteEntidad
+	 * @param Cliente
 	 * @return ClienteDTO
 	 */
-	public static ClienteDTO mapearDTO(ClienteEntidad clienteEntidad) {
+	public static ClienteDTO mapearDTO(Cliente cliente) {
 
-		return new ClienteDTO(clienteEntidad.getId(), clienteEntidad.getCedula(), clienteEntidad.getNombre(),
-				clienteEntidad.getApellido());
+		return new ClienteDTO(cliente.getId(), cliente.getCedula(), cliente.getNombre(), cliente.getApellido());
 
 	}
 
 	/**
-	 * Funcion encargada de convertir una clase ClienteDTO a ClienteEntidad
+	 * Funcion encargada de convertir una clase ClienteDTO a Cliente
 	 * 
 	 * @param ClienteDTO
-	 * @return ClienteEntidad
+	 * @return Cliente
 	 */
-	public static ClienteEntidad mapearAModelo(ClienteDTO clienteDTO) {
+	public static Cliente mapearAModelo(ClienteDTO clienteDTO) {
 
-		ClienteEntidad clienteEntidad = new ClienteEntidad();
-		clienteEntidad.setId(clienteDTO.getId());
-		clienteEntidad.setCedula(clienteDTO.getCedula());
-		clienteEntidad.setNombre(clienteDTO.getNombre());
-		clienteEntidad.setApellido(clienteDTO.getApellido());
+		return new Cliente(clienteDTO.getId(), clienteDTO.getCedula(), clienteDTO.getNombre(),
+				clienteDTO.getApellido());
 
-		return clienteEntidad;
 	}
 
 }

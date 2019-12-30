@@ -1,4 +1,4 @@
-package com.ceiba.adn.taximetrovirtual.aplicacion.servicio;
+package com.ceiba.adn.taximetrovirtual.aplicacion.manejador;
 
 import com.ceiba.adn.taximetrovirtual.dominio.puerto.repositorio.RepositorioCarrera;
 import com.ceiba.adn.taximetrovirtual.infraestructura.adaptador.repositorio.entidad.CarreraEntidad;
@@ -9,10 +9,10 @@ import com.ceiba.adn.taximetrovirtual.infraestructura.adaptador.repositorio.enti
  * @author diego.avila
  *
  */
-public class ServicioCrearCarrera {
+public class ManejadorCrearCarrera {
 	private final RepositorioCarrera repositorioCarrera;
 
-	public ServicioCrearCarrera(RepositorioCarrera repositorioCarrera) {
+	public ManejadorCrearCarrera(RepositorioCarrera repositorioCarrera) {
 		this.repositorioCarrera = repositorioCarrera;
 	}
 	

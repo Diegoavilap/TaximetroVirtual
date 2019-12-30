@@ -1,12 +1,15 @@
 package com.ceiba.adn.taximetrovirtual.dominio.puerto.repositorio;
 
 
-import org.springframework.data.jpa.repository.JpaRepository;
-import org.springframework.stereotype.Repository;
+import java.util.Optional;
 
-import com.ceiba.adn.taximetrovirtual.infraestructura.adaptador.repositorio.entidad.ClienteEntidad;
+import com.ceiba.adn.taximetrovirtual.dominio.modelo.Cliente;
 
-@Repository
-public interface RepositorioCliente extends JpaRepository<ClienteEntidad, Long>{
+public interface RepositorioCliente{
 	
+	public Cliente crear (Cliente cliente);
+	
+	public Optional<Cliente> buscarPorCedula(String cedula);
+	
+	public boolean existePorCedula(String cedula);
 }

@@ -9,8 +9,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.ceiba.adn.taximetrovirtual.aplicacion.dto.ClienteDTO;
-import com.ceiba.adn.taximetrovirtual.aplicacion.servicio.ServicioCrearCliente;
-import com.ceiba.adn.taximetrovirtual.infraestructura.adaptador.repositorio.entidad.ClienteEntidad;
+import com.ceiba.adn.taximetrovirtual.aplicacion.manejador.ManejadorCrearCliente;
+import com.ceiba.adn.taximetrovirtual.dominio.modelo.Cliente;
 
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
@@ -29,9 +29,9 @@ import io.swagger.annotations.ApiResponse;
 @Api(tags = "cliente")
 public class ClienteController {
 
-	private final ServicioCrearCliente servicioCliente;
+	private final ManejadorCrearCliente servicioCliente;
 
-	public ClienteController(ServicioCrearCliente servicioCliente) {
+	public ClienteController(ManejadorCrearCliente servicioCliente) {
 		this.servicioCliente = servicioCliente;
 	}
 
@@ -39,7 +39,7 @@ public class ClienteController {
 	@ApiOperation(value = "Crear Cliente", notes = "Servicio para Crear un Cliente")
 	@ApiResponses(value = { @ApiResponse(code = 201, message = "Cliente Creado Exitosamente"),
 			@ApiResponse(code = 400, message = "Solicitud invalida") })
-	public ResponseEntity<ClienteEntidad> crearCliente(@RequestBody ClienteDTO cliente) {
-		return new ResponseEntity<>(this.servicioCliente.ejecutar(cliente), HttpStatus.CREATED);
+	public ResponseEntity<Cliente> crearCliente(@RequestBody ClienteDTO clienteDTO) {
+		return new ResponseEntity<>(this.servicioCliente.ejecutar(clienteDTO), HttpStatus.CREATED);
 	}
 }

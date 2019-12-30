@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.ceiba.adn.taximetrovirtual.aplicacion.dto.CarreraDTO;
-import com.ceiba.adn.taximetrovirtual.aplicacion.servicio.ServicioCrearCarrera;
+import com.ceiba.adn.taximetrovirtual.aplicacion.manejador.ManejadorCrearCarrera;
 import com.ceiba.adn.taximetrovirtual.infraestructura.adaptador.repositorio.entidad.CarreraEntidad;
 
 import io.swagger.annotations.Api;
@@ -29,9 +29,9 @@ import io.swagger.annotations.ApiResponses;
 @Api(tags = "carrera")
 public class CarreraController {
 
-	private final ServicioCrearCarrera servicioCarrera;
+	private final ManejadorCrearCarrera servicioCarrera;
 
-	public CarreraController(ServicioCrearCarrera servicioCarrera) {
+	public CarreraController(ManejadorCrearCarrera servicioCarrera) {
 		this.servicioCarrera = servicioCarrera;
 	}
 	/*

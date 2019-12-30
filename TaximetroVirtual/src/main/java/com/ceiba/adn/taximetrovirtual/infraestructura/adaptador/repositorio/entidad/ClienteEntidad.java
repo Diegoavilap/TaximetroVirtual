@@ -11,8 +11,11 @@ import javax.persistence.Table;
 @Table(name = "CLIENTE")
 public class ClienteEntidad {
 
-	public ClienteEntidad() {
-		// TODO
+	public ClienteEntidad(Long id, String cedula, String nombre, String apellido){
+		this.id = id;
+		this.cedula = cedula;
+		this.nombre = nombre;
+		this.apellido = apellido;
 	}
 
 	@Id
