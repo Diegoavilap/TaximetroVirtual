@@ -10,6 +10,10 @@ import javax.persistence.Table;
 @Entity
 @Table(name = "CLIENTE")
 public class ClienteEntidad {
+	
+	public ClienteEntidad() {
+		// TODO Auto-generated constructor stub
+	}
 
 	public ClienteEntidad(Long id, String cedula, String nombre, String apellido){
 		this.id = id;

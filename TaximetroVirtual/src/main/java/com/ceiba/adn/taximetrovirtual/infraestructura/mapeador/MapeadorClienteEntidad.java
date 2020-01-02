@@ -10,7 +10,7 @@ import com.ceiba.adn.taximetrovirtual.infraestructura.adaptador.repositorio.enti
 @Component
 public class MapeadorClienteEntidad {
 	
-	public Cliente mapearA(ClienteEntidad clienteEntidad) {
+	public Cliente mapearAModelo(ClienteEntidad clienteEntidad) {
 		if (Objects.isNull(clienteEntidad)) {
 			return null;
 		}
@@ -18,7 +18,7 @@ public class MapeadorClienteEntidad {
 				clienteEntidad.getApellido());
 	}
 
-	public ClienteEntidad mapearDesde(Cliente cliente) {
+	public ClienteEntidad mapearAEntidad(Cliente cliente) {
 		if (Objects.isNull(cliente)) {
 			return null;
 		}

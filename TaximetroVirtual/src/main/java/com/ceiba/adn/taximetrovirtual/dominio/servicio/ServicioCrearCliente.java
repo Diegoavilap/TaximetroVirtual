@@ -17,6 +17,17 @@ public class ServicioCrearCliente {
 		if (repositorio.existePorCedula(cliente.getCedula())) {
 			throw new ExcepcionDatoYaRegistrado(MSG_CEDULA_YA_REGISTRADA);
 		}
-		return repositorio.crear(cliente);
+//		try {
+			return repositorio.crear(cliente);
+//		}catch(NullPointerException e) {
+//			throw new RuntimeException("este es el error " + " " +
+//					cliente.getId() + " " +
+//					cliente.getCedula() +	 " " +
+//					cliente.getNombre() +  " " +
+//					cliente.getApellido() + " " +
+//					" ... Mensaje  ..." +  " " +
+//					e.getMessage());
+//		}
 	}
 }
+ 

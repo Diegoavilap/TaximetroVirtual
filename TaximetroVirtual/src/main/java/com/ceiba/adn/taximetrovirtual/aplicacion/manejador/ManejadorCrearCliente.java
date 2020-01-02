@@ -6,7 +6,7 @@ import com.ceiba.adn.taximetrovirtual.dominio.modelo.Cliente;
 import com.ceiba.adn.taximetrovirtual.dominio.servicio.ServicioCrearCliente;
 
 /**
- * Clase para definir el servicio de creación de cliente
+ * Clase para definir el servicio de creacion de cliente
  * 
  * @author diego.avila
  *
@@ -20,14 +20,24 @@ public class ManejadorCrearCliente {
 	}
 
 	/**
-	 * Método encargado de realizar la operación de creacion de un cliente
+	 * Metodo encargado de realizar la operacion de creacion de un cliente
 	 * 
 	 * @param clienteDTO
 	 * @return
 	 */
 	public Cliente ejecutar(ClienteDTO clienteDTO) {
 		Cliente cliente = MapeadorCliente.mapearAModelo(clienteDTO);
-		return this.servicioCrearCliente.crearCliente(cliente);
+//		try {
+			return this.servicioCrearCliente.crearCliente(cliente); 
+//		}catch(NullPointerException e) {
+//			throw new RuntimeException("este es el error " + " " +
+//					cliente.getId() + " " +
+//					cliente.getCedula() +	 " " +
+//					cliente.getNombre() +  " " +
+//					cliente.getApellido() + " " +
+//					" ... Mensaje  ..." +  " " +
+//					e);
+//		}
 	}
 
 }

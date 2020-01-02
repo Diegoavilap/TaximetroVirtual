@@ -10,7 +10,7 @@ public final class ValidarDatos {
 		throw new AssertionError("Esta clase no debe ser instanciada");
 	}
 	
-	private static final String MSG_CEDULA_TIENE_CARACTERES_NO_NUMERICOS = "La cédula debe contener solo carácteres númericos";
+	private static final String MSG_CEDULA_TIENE_CARACTERES_NO_NUMERICOS = "La cedula debe contener solo caracteres numericos";
 
 	/**
 	 * Funcion encargada de validar las precondiciones de las cedulas

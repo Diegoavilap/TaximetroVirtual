@@ -27,11 +27,11 @@ import io.swagger.annotations.ApiResponses;
 @RestController
 @RequestMapping("/api/carrera")
 @Api(tags = "carrera")
-public class CarreraController {
+public class ControladorCarrera {
 
 	private final ManejadorCrearCarrera servicioCarrera;
 
-	public CarreraController(ManejadorCrearCarrera servicioCarrera) {
+	public ControladorCarrera(ManejadorCrearCarrera servicioCarrera) {
 		this.servicioCarrera = servicioCarrera;
 	}
 	/*

@@ -16,12 +16,13 @@ public class ClienteEntidadTestDataBuilder {
 	}
 	
 	public ClienteEntidadTestDataBuilder() {
-		this.id = 1L;
+		
 		this.cedula = "1105234678";
 		this.nombre = "Bernarda";
 		this.apellido = "Bejarano";
 	}
 	
+
 	public ClienteEntidad build() {
 		return new ClienteEntidad(id, cedula, nombre, apellido);
 	}

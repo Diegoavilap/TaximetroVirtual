@@ -27,11 +27,11 @@ import io.swagger.annotations.ApiResponse;
 @RestController
 @RequestMapping("/api/cliente")
 @Api(tags = "cliente")
-public class ClienteController {
+public class ControladorCliente {
 
 	private final ManejadorCrearCliente servicioCliente;
 
-	public ClienteController(ManejadorCrearCliente servicioCliente) {
+	public ControladorCliente(ManejadorCrearCliente servicioCliente) {
 		this.servicioCliente = servicioCliente;
 	}
 

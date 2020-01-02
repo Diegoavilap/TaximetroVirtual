@@ -15,14 +15,16 @@ public class AdaptadorRepositorioCliente implements RepositorioCliente{
 	private RepositorioClienteJPA clienteJPA;
 	private MapeadorClienteEntidad mapeadorCliente;
 	
-	public AdaptadorRepositorioCliente(RepositorioClienteJPA clienteJPA) {
+	public AdaptadorRepositorioCliente(RepositorioClienteJPA clienteJPA, MapeadorClienteEntidad mapeadorClienteEntidad) {
 		this.clienteJPA = clienteJPA;
+		this.mapeadorCliente = mapeadorClienteEntidad;
 	}
 	
 	@Override
 	public Cliente crear(Cliente cliente) {
-		ClienteEntidad entidad = mapeadorCliente.mapearDesde(cliente);
-		return mapeadorCliente.mapearA(clienteJPA.save(entidad));
+		ClienteEntidad entidad;
+		entidad = mapeadorCliente.mapearAEntidad(cliente);
+		return mapeadorCliente.mapearAModelo(clienteJPA.save(entidad));
 	}
 
 	@Override

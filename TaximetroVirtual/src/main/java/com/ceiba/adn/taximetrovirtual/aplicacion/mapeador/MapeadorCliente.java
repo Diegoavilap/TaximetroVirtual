@@ -1,8 +1,13 @@
 package com.ceiba.adn.taximetrovirtual.aplicacion.mapeador;
 
+import java.util.Objects;
+
+import org.springframework.stereotype.Component;
+
 import com.ceiba.adn.taximetrovirtual.aplicacion.dto.ClienteDTO;
 import com.ceiba.adn.taximetrovirtual.dominio.modelo.Cliente;
 
+@Component
 public class MapeadorCliente {
 
 	private MapeadorCliente() {
@@ -14,8 +19,10 @@ public class MapeadorCliente {
 	 * @param Cliente
 	 * @return ClienteDTO
 	 */
-	public static ClienteDTO mapearDTO(Cliente cliente) {
-
+	public static ClienteDTO mapearADTO(Cliente cliente) {
+		if (Objects.isNull(cliente)) {
+			return null;
+		}
 		return new ClienteDTO(cliente.getId(), cliente.getCedula(), cliente.getNombre(), cliente.getApellido());
 
 	}
@@ -27,7 +34,9 @@ public class MapeadorCliente {
 	 * @return Cliente
 	 */
 	public static Cliente mapearAModelo(ClienteDTO clienteDTO) {
-
+		if (Objects.isNull(clienteDTO)) {
+			return null;
+		}
 		return new Cliente(clienteDTO.getId(), clienteDTO.getCedula(), clienteDTO.getNombre(),
 				clienteDTO.getApellido());
 
