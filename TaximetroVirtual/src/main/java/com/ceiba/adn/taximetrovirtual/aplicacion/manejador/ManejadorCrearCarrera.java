@@ -4,7 +4,7 @@ import com.ceiba.adn.taximetrovirtual.dominio.puerto.repositorio.RepositorioCarr
 import com.ceiba.adn.taximetrovirtual.infraestructura.adaptador.repositorio.entidad.CarreraEntidad;
 
 /**
- * Clase para definir el servicio de creación de carrera
+ * Clase para definir el servicio de creacion de carrera
  * 
  * @author diego.avila
  *
@@ -17,7 +17,7 @@ public class ManejadorCrearCarrera {
 	}
 	
 	/**
-	 * Método encargado de realizar la operación de creacion de una carrera
+	 * Metodo encargado de realizar la operacion de creacion de una carrera
 	 * @param carreraEntidad
 	 * @return
 	 */

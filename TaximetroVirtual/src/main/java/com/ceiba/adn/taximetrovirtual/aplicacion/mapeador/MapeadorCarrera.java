@@ -1,9 +1,5 @@
 package com.ceiba.adn.taximetrovirtual.aplicacion.mapeador;
 
-import com.ceiba.adn.taximetrovirtual.aplicacion.dto.CarreraDTO;
-import com.ceiba.adn.taximetrovirtual.aplicacion.dto.ClienteDTO;
-import com.ceiba.adn.taximetrovirtual.infraestructura.adaptador.repositorio.entidad.CarreraEntidad;
-import com.ceiba.adn.taximetrovirtual.infraestructura.adaptador.repositorio.entidad.ClienteEntidad;
 
 public class MapeadorCarrera {
 

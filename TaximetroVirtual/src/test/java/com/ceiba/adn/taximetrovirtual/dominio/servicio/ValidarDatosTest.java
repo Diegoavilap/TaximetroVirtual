@@ -6,8 +6,8 @@ import org.junit.Test;
 
 
 public class ValidarDatosTest {
-	private static final String MSG_CEDULA_TIENE_CARACTERES_NO_NUMERICOS = "La cédula debe contener solo carácteres númericos";
-	private static final String MSG_CEDULA_TIENE_ESPACIOS = "La cédula no debe contener espacios entre los números";
+	private static final String MSG_CEDULA_TIENE_CARACTERES_NO_NUMERICOS = "La cedula debe contener solo caracteres numericos";
+	private static final String MSG_CEDULA_TIENE_ESPACIOS = "La cedula no debe contener espacios entre los numeros";
 	
 	@Test
 	public void cedulaConCaracteresNoNumericos() {

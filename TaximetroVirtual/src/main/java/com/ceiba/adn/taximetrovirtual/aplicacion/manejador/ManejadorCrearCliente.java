@@ -27,17 +27,7 @@ public class ManejadorCrearCliente {
 	 */
 	public Cliente ejecutar(ClienteDTO clienteDTO) {
 		Cliente cliente = MapeadorCliente.mapearAModelo(clienteDTO);
-//		try {
-			return this.servicioCrearCliente.crearCliente(cliente); 
-//		}catch(NullPointerException e) {
-//			throw new RuntimeException("este es el error " + " " +
-//					cliente.getId() + " " +
-//					cliente.getCedula() +	 " " +
-//					cliente.getNombre() +  " " +
-//					cliente.getApellido() + " " +
-//					" ... Mensaje  ..." +  " " +
-//					e);
-//		}
+		return this.servicioCrearCliente.crearCliente(cliente); 
 	}
 
 }
