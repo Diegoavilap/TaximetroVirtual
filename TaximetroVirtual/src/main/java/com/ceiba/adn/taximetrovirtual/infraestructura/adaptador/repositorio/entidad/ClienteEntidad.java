@@ -10,12 +10,10 @@ import javax.persistence.Table;
 @Entity
 @Table(name = "CLIENTE")
 public class ClienteEntidad {
-	
-	public ClienteEntidad() {
-		// TODO Auto-generated constructor stub
-	}
 
-	public ClienteEntidad(Long id, String cedula, String nombre, String apellido){
+	public ClienteEntidad() {}
+
+	public ClienteEntidad(Long id, String cedula, String nombre, String apellido) {
 		this.id = id;
 		this.cedula = cedula;
 		this.nombre = nombre;
@@ -54,18 +52,6 @@ public class ClienteEntidad {
 
 	public void setId(Long id) {
 		this.id = id;
-	}
-
-	public void setCedula(String cedula) {
-		this.cedula = cedula;
-	}
-
-	public void setNombre(String nombre) {
-		this.nombre = nombre;
-	}
-
-	public void setApellido(String apellido) {
-		this.apellido = apellido;
 	}
 
 }

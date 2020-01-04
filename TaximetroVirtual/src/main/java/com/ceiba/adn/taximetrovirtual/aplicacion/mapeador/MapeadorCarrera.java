@@ -2,13 +2,11 @@ package com.ceiba.adn.taximetrovirtual.aplicacion.mapeador;
 
 import java.util.Objects;
 
-import org.springframework.stereotype.Component;
-
 import com.ceiba.adn.taximetrovirtual.aplicacion.dto.CarreraDTO;
 import com.ceiba.adn.taximetrovirtual.dominio.modelo.Carrera;
 
-@Component
-public class MapeadorCarrera {
+
+public final class MapeadorCarrera {
 
 	private MapeadorCarrera() {
 	}

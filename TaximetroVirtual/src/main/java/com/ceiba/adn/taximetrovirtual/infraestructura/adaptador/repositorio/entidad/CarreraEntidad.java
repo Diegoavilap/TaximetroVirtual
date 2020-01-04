@@ -19,14 +19,12 @@ public class CarreraEntidad {
 	public CarreraEntidad() {
 		// TODO Auto-generated constructor stub
 	}
-	
-	
+
 	public CarreraEntidad(Long id, ClienteEntidad clienteId, LocalDateTime fechaInicio) {
 		this.id = id;
 		this.clienteId = clienteId;
 		this.fechaInicio = fechaInicio;
 	}
-
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)

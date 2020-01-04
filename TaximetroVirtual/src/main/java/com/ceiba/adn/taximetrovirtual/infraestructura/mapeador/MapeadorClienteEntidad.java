@@ -6,6 +6,9 @@ import com.ceiba.adn.taximetrovirtual.dominio.modelo.Cliente;
 import com.ceiba.adn.taximetrovirtual.infraestructura.adaptador.repositorio.entidad.ClienteEntidad;
 
 public final class MapeadorClienteEntidad {
+	
+	private MapeadorClienteEntidad() {
+	}
 
 	public static Cliente mapearAModelo(ClienteEntidad clienteEntidad) {
 		if (Objects.isNull(clienteEntidad)) {

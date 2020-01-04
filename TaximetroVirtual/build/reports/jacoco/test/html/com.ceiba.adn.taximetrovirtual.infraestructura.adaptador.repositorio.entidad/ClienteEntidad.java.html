@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>ClienteEntidad.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">TaximetroVirtual</a> &gt; <a href="index.source.html" class="el_package">com.ceiba.adn.taximetrovirtual.infraestructura.adaptador.repositorio.entidad</a> &gt; <span class="el_source">ClienteEntidad.java</span></div><h1>ClienteEntidad.java</h1><pre class="source lang-java linenums">package com.ceiba.adn.taximetrovirtual.infraestructura.adaptador.repositorio.entidad;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+@Entity
+@Table(name = &quot;CLIENTE&quot;)
+public class ClienteEntidad {
+
+<span class="nc" id="L14">	public ClienteEntidad() {}</span>
+
+<span class="nc" id="L16">	public ClienteEntidad(Long id, String cedula, String nombre, String apellido) {</span>
+<span class="nc" id="L17">		this.id = id;</span>
+<span class="nc" id="L18">		this.cedula = cedula;</span>
+<span class="nc" id="L19">		this.nombre = nombre;</span>
+<span class="nc" id="L20">		this.apellido = apellido;</span>
+<span class="nc" id="L21">	}</span>
+
+	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
+	@Column(name = &quot;ID&quot;)
+	private Long id;
+
+	@Column(name = &quot;CEDULA&quot;)
+	private String cedula;
+
+	@Column(name = &quot;NOMBRE&quot;)
+	private String nombre;
+
+	@Column(name = &quot;APELLIDO&quot;)
+	private String apellido;
+
+	public Long getId() {
+<span class="nc" id="L38">		return id;</span>
+	}
+
+	public String getCedula() {
+<span class="nc" id="L42">		return cedula;</span>
+	}
+
+	public String getNombre() {
+<span class="nc" id="L46">		return nombre;</span>
+	}
+
+	public String getApellido() {
+<span class="nc" id="L50">		return apellido;</span>
+	}
+
+	public void setId(Long id) {
+<span class="nc" id="L54">		this.id = id;</span>
+<span class="nc" id="L55">	}</span>
+
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.5.201910111838</span></div></body></html>

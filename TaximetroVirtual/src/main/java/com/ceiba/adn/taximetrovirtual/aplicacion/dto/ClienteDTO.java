@@ -38,20 +38,4 @@ public class ClienteDTO {
 		return apellido;
 	}
 
-	public void setId(Long id) {
-		this.id = id;
-	}
-
-	public void setCedula(String cedula) {
-		this.cedula = cedula;
-	}
-
-	public void setNombre(String nombre) {
-		this.nombre = nombre;
-	}
-
-	public void setApellido(String apellido) {
-		this.apellido = apellido;
-	}
-
 }

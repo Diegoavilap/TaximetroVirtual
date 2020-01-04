@@ -7,6 +7,7 @@ import com.ceiba.adn.taximetrovirtual.infraestructura.adaptador.repositorio.enti
 import com.ceiba.adn.taximetrovirtual.infraestructura.adaptador.repositorio.entidad.ClienteEntidad;
 
 public final class MapeadorCarreraEntidad {
+	
 	private MapeadorCarreraEntidad() {
 	}
 

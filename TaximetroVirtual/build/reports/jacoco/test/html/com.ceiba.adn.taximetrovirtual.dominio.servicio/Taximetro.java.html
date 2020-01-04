@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>Taximetro.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">TaximetroVirtual</a> &gt; <a href="index.source.html" class="el_package">com.ceiba.adn.taximetrovirtual.dominio.servicio</a> &gt; <span class="el_source">Taximetro.java</span></div><h1>Taximetro.java</h1><pre class="source lang-java linenums">package com.ceiba.adn.taximetrovirtual.dominio.servicio;
+
+import java.math.BigDecimal;
+import java.time.DayOfWeek;
+import java.time.Duration;
+import java.time.LocalDateTime;
+
+import com.ceiba.adn.taximetrovirtual.dominio.modelo.Carrera;
+
+public final class Taximetro {
+
+	private static final int CERO = 0;
+	private static final int TARIFA_HORARIO_DIURNO_FIN_DE_SEMANA = 500;
+	private static final int TARIFA_HORARIO_DIRUNO_ENTRE_SEMANA = 400;
+	private static final int TARIFA_HORARIO_DE_20_PM_A_5_AM = 700;
+	private static final int TARIFA_HORARIO_DE_18_A_20_PM = 600;
+
+<span class="nc" id="L18">	private Taximetro() {</span>
+<span class="nc" id="L19">		throw new AssertionError(&quot;Esta clase no debe ser instanciada&quot;);</span>
+	}
+
+	/**
+	 * Funcion encargada de calcular el costo de un carrera, dada la carrera y la fecha de finalizacion
+	 * @param carrera
+	 * @param fechaFin
+	 * @return BigDecimal correspondiente al costo de la carrera de acuerdo a las reglas de negocio
+	 */
+	public static BigDecimal calcularCosto(Carrera carrera, LocalDateTime fechaFin) {
+<span class="nc" id="L29">		BigDecimal tarifaPorMinuto = calcularTarifaPorMinuto(carrera);</span>
+<span class="nc" id="L30">		Long tiempoDuracionCarrera = Duration.between(carrera.getFechaInicio(), fechaFin).toMinutes();</span>
+		BigDecimal costoCarrera;
+<span class="nc bnc" id="L32" title="All 2 branches missed.">		if(tiempoDuracionCarrera == CERO) {</span>
+<span class="nc" id="L33">			costoCarrera = tarifaPorMinuto;</span>
+		}else {
+<span class="nc" id="L35">			costoCarrera = tarifaPorMinuto.multiply(new BigDecimal(tiempoDuracionCarrera));</span>
+		}
+<span class="nc" id="L37">		return costoCarrera;</span>
+	}
+
+	/**
+	 * Funcion encargada de calcular la tarifa por minuto de acuerdo a la hora de inicio de la carrera 
+	 * @param carrera 
+	 * @return BigDecimal correspondiente a la tarifa de acuerdo a la hora de inicio establecidas 
+	 * como reglas del negocio
+	 */
+	private static BigDecimal calcularTarifaPorMinuto(Carrera carrera) {
+		BigDecimal tarifaPorMinuto;
+		
+<span class="nc bnc" id="L49" title="All 2 branches missed.">		if(esHorarioDe18a20Horas(carrera)) {</span>
+
+<span class="nc" id="L51">			tarifaPorMinuto = new BigDecimal(TARIFA_HORARIO_DE_18_A_20_PM);</span>
+			
+<span class="nc bnc" id="L53" title="All 2 branches missed.">		}else if (esHorario20a5Horas(carrera)) {</span>
+			
+<span class="nc" id="L55">			tarifaPorMinuto = new BigDecimal(TARIFA_HORARIO_DE_20_PM_A_5_AM);</span>
+			
+<span class="nc bnc" id="L57" title="All 2 branches missed.">		}else if(!esFinDeSemana(carrera.getFechaInicio())) {</span>
+			 
+<span class="nc" id="L59">			tarifaPorMinuto = new BigDecimal(TARIFA_HORARIO_DIRUNO_ENTRE_SEMANA);</span>
+			
+		}else {
+			
+<span class="nc" id="L63">			tarifaPorMinuto = new BigDecimal(TARIFA_HORARIO_DIURNO_FIN_DE_SEMANA);</span>
+			
+		}
+<span class="nc" id="L66">		return tarifaPorMinuto;</span>
+	}
+
+
+	/**
+	 * Funcion encargada de validar si el horario de una carrera es entre las 18:00 pm y las 20:00 pm
+	 * @param carrera
+	 * @return boolean true si la carrera tiene hora de inicio entre las 18:00 pm y 20:00 pm 
+	 * false si la carrera no corresponde al rango horario anteriormente descrito
+	 */
+	private static boolean esHorarioDe18a20Horas(Carrera carrera) {
+<span class="nc bnc" id="L77" title="All 4 branches missed.">		return carrera.getFechaInicio().getHour() &gt;= 18 &amp;&amp; carrera.getFechaInicio().getHour() &lt; 20;</span>
+	}
+	
+	/**
+	 * Funcion encargada de validar si el horario de una carrera es entre las 20:00 pm y las 5:00 am
+	 * @param carrera
+	 * @return boolean true si la carrera tiene hora de inicio entre las 20:00 pm y 5:00 am 
+	 * false si la carrera no corresponde al rango horario anteriormente descrito
+	 */
+	private static boolean esHorario20a5Horas(Carrera carrera) {
+<span class="nc bnc" id="L87" title="All 4 branches missed.">		return carrera.getFechaInicio().getHour() &gt;= 20 || carrera.getFechaInicio().getHour() &lt; 5;</span>
+	}
+	
+	/**
+	 * Funcion que se encarga de validar si la fecha dada corresponde a un fin de semana (Sabado o Domingo)
+	 * @param fecha
+	 * @return boolean true si el dia de la fecha dada corresponde a un sabado o domingo 
+	 * false si no corresponde a uno de estos dias anteriormente descrita
+	 */
+
+	private static boolean esFinDeSemana(LocalDateTime fecha) {
+<span class="nc bnc" id="L98" title="All 4 branches missed.">		return fecha.getDayOfWeek().equals(DayOfWeek.SATURDAY) || fecha.getDayOfWeek().equals(DayOfWeek.SUNDAY);</span>
+	}
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.5.201910111838</span></div></body></html>

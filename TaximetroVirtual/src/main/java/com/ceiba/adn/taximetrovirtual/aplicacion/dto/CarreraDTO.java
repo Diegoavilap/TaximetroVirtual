@@ -30,16 +30,4 @@ public class CarreraDTO {
 		return fechaInicio;
 	}
 
-	public void setId(Long id) {
-		this.id = id;
-	}
-
-	public void setIdCliente(Long clienteId) {
-		this.clienteId = clienteId;
-	}
-
-	public void setFechaInicio(LocalDateTime fechaInicio) {
-		this.fechaInicio = fechaInicio;
-	}
-
 }
