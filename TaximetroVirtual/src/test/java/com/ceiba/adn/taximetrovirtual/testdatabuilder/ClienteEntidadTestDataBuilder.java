@@ -16,8 +16,7 @@ public class ClienteEntidadTestDataBuilder {
 	}
 	
 	public ClienteEntidadTestDataBuilder() {
-		
-		this.cedula = "1105234678";
+		this.cedula = "11075234678";
 		this.nombre = "Bernarda";
 		this.apellido = "Bejarano";
 	}

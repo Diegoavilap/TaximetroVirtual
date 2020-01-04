@@ -4,12 +4,17 @@ import static org.springframework.test.web.servlet.request.MockMvcRequestBuilder
 import static org.springframework.test.web.servlet.result.MockMvcResultHandlers.print;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
+import org.junit.After;
 import org.junit.Before;
+import org.junit.Ignore;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.http.MediaType;
+import org.springframework.test.context.TestPropertySource;
+import org.springframework.test.context.jdbc.Sql;
+import org.springframework.test.context.jdbc.Sql.ExecutionPhase;
 import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.test.context.web.WebAppConfiguration;
 import org.springframework.test.web.servlet.MockMvc;
@@ -21,12 +26,10 @@ import com.ceiba.adn.taximetrovirtual.aplicacion.dto.ClienteDTO;
 import com.ceiba.adn.taximetrovirtual.testdatabuilder.ClienteDTOTestDataBuilder;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
-
-
 @RunWith(SpringRunner.class)
 @SpringBootTest(classes = TaximetroVirtualApplication.class)
 @WebAppConfiguration
-//@TestPropertySource(locations = "classpath:application.properties")
+@TestPropertySource(locations = "classpath:application.properties")
 public class ControladorClienteTest {
 
 	private static final String URL_BASE = "http://localhost:8080/api/cliente";
@@ -43,15 +46,29 @@ public class ControladorClienteTest {
 	public void setup() throws Exception {
 		this.mockMvc = MockMvcBuilders.webAppContextSetup(this.wac).build();
 	}
-	
+
+	@After
+	//@Sql(scripts = "/scripts/cliente-data.sql")
+//	public void tearDown() throws Exception{
+//		final Statement statement = dataSource.getConnection().createStatement();
+//		statement.execute("DROP ALL objects DELETE files");
+//	}
+
 	@Test
-//	@Sql(executionPhase = ExecutionPhase.AFTER_TEST_METHOD, scripts = "/scripts/sql/controlador/bano/data-delete-crear-bano-id-no-nulo-ok.sql")
+	@Ignore
+	@Sql(executionPhase = ExecutionPhase.BEFORE_TEST_METHOD, scripts = "/scripts/cliente-data.sql")
+	@Sql(executionPhase = ExecutionPhase.AFTER_TEST_METHOD, scripts = "/scripts/cliente-data.sql")
 	public void cuandoPeticionCrearClienteYIdNoNuloYNoDuplicadoCorrectaEntoncesDeberiaCrear() throws Exception {
 		// arrange
 		ClienteDTO clienteDTO = new ClienteDTOTestDataBuilder().build();
 
 		// act - assert
-		mockMvc.perform(post(URL_BASE).contentType(MediaType.APPLICATION_JSON)
-				.content(objectMapperTest.writeValueAsString(clienteDTO))).andDo(print()).andExpect(status().isCreated());
+		mockMvc.perform(post(URL_BASE)
+				.contentType(MediaType.APPLICATION_JSON)
+				.content(objectMapperTest.writeValueAsString(clienteDTO)))
+				.andDo(print())
+				.andExpect(status().isCreated());
 	}
+	
+	
 }

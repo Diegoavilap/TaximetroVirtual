@@ -19,6 +19,14 @@ public class CarreraEntidad {
 	public CarreraEntidad() {
 		// TODO Auto-generated constructor stub
 	}
+	
+	
+	public CarreraEntidad(Long id, ClienteEntidad clienteId, LocalDateTime fechaInicio) {
+		this.id = id;
+		this.clienteId = clienteId;
+		this.fechaInicio = fechaInicio;
+	}
+
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
@@ -49,22 +57,6 @@ public class CarreraEntidad {
 
 	public DetalleCarreraEntidad getDetalleCarrera() {
 		return detalleCarrera;
-	}
-
-	public void setId(Long id) {
-		this.id = id;
-	}
-
-	public void setClienteId(ClienteEntidad clienteId) {
-		this.clienteId = clienteId;
-	}
-
-	public void setFechaInicio(LocalDateTime fechaInicio) {
-		this.fechaInicio = fechaInicio;
-	}
-
-	public void setDetalleCarrera(DetalleCarreraEntidad detalleCarrera) {
-		this.detalleCarrera = detalleCarrera;
 	}
 
 }

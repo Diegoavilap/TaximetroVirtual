@@ -1,7 +1,9 @@
 package com.ceiba.adn.taximetrovirtual.aplicacion.manejador;
 
-import com.ceiba.adn.taximetrovirtual.dominio.puerto.repositorio.RepositorioCarrera;
-import com.ceiba.adn.taximetrovirtual.infraestructura.adaptador.repositorio.entidad.CarreraEntidad;
+import com.ceiba.adn.taximetrovirtual.aplicacion.dto.CarreraDTO;
+import com.ceiba.adn.taximetrovirtual.aplicacion.mapeador.MapeadorCarrera;
+import com.ceiba.adn.taximetrovirtual.dominio.modelo.Carrera;
+import com.ceiba.adn.taximetrovirtual.dominio.servicio.ServicioCrearCarrera;
 
 /**
  * Clase para definir el servicio de creacion de carrera
@@ -10,10 +12,10 @@ import com.ceiba.adn.taximetrovirtual.infraestructura.adaptador.repositorio.enti
  *
  */
 public class ManejadorCrearCarrera {
-	private final RepositorioCarrera repositorioCarrera;
+	private final ServicioCrearCarrera servicioCrearCarrera;
 
-	public ManejadorCrearCarrera(RepositorioCarrera repositorioCarrera) {
-		this.repositorioCarrera = repositorioCarrera;
+	public ManejadorCrearCarrera(ServicioCrearCarrera servicioCrearCarrera) {
+		this.servicioCrearCarrera = servicioCrearCarrera;
 	}
 	
 	/**
@@ -22,9 +24,9 @@ public class ManejadorCrearCarrera {
 	 * @return
 	 */
 	
-	public CarreraEntidad ejecutar(CarreraEntidad carrera) {
-		//CarreraEntidad carrera = MapeadorCliente.mapearAModelo(clienteDTO);
-		return this.repositorioCarrera.save(carrera);
+	public Carrera ejecutar(CarreraDTO carreraDTO) {
+		Carrera carrera = MapeadorCarrera.mapearAModelo(carreraDTO);
+		return this.servicioCrearCarrera.crearCarrera(carrera);
 	}
 	
 }

@@ -19,7 +19,7 @@ public class ClienteDTOTestDataBuilder {
 	public ClienteDTOTestDataBuilder() {
 	
 		this.id = 1L;
-		this.cedula = "1106765987";
+		this.cedula = "11088765987";
 		this.nombre = "Pepe";
 		this.apellido = "Sierra";
 	}
@@ -28,17 +28,17 @@ public class ClienteDTOTestDataBuilder {
 		return new ClienteDTO(id, cedula, nombre, apellido);
 	}
 
-	public ClienteDTOTestDataBuilder setCedula(String cedula) {
+	public ClienteDTOTestDataBuilder conCedula(String cedula) {
 		this.cedula = cedula;
 		return this;
 	}
 
-	public ClienteDTOTestDataBuilder setNombre(String nombre) {
+	public ClienteDTOTestDataBuilder conNombre(String nombre) {
 		this.nombre = nombre;
 		return this;
 	}
 
-	public ClienteDTOTestDataBuilder setApellido(String apellido) {
+	public ClienteDTOTestDataBuilder conApellido(String apellido) {
 		this.apellido = apellido;
 		return this;
 	}

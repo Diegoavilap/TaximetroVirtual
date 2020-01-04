@@ -13,18 +13,15 @@ import com.ceiba.adn.taximetrovirtual.infraestructura.mapeador.MapeadorClienteEn
 public class AdaptadorRepositorioCliente implements RepositorioCliente{
 
 	private RepositorioClienteJPA clienteJPA;
-	private MapeadorClienteEntidad mapeadorCliente;
 	
-	public AdaptadorRepositorioCliente(RepositorioClienteJPA clienteJPA, MapeadorClienteEntidad mapeadorClienteEntidad) {
+	public AdaptadorRepositorioCliente(RepositorioClienteJPA clienteJPA) {
 		this.clienteJPA = clienteJPA;
-		this.mapeadorCliente = mapeadorClienteEntidad;
 	}
 	
 	@Override
 	public Cliente crear(Cliente cliente) {
-		ClienteEntidad entidad;
-		entidad = mapeadorCliente.mapearAEntidad(cliente);
-		return mapeadorCliente.mapearAModelo(clienteJPA.save(entidad));
+		ClienteEntidad entidad = MapeadorClienteEntidad.mapearAEntidad(cliente);
+		return MapeadorClienteEntidad.mapearAModelo(clienteJPA.save(entidad));
 	}
 
 	@Override
