@@ -25,7 +25,7 @@ public class AdaptadorRepositorioCliente implements RepositorioCliente{
 	}
 
 	@Override
-	public Optional<Cliente> buscarPorCedula(String cedula) {
+	public Optional<Cliente> buscarClientePorCedula(String cedula) {
 		return clienteJPA.findByCedula(cedula);
 	}
 
@@ -33,5 +33,6 @@ public class AdaptadorRepositorioCliente implements RepositorioCliente{
 	public boolean existePorCedula(String cedula) {
 		return clienteJPA.existsByCedula(cedula);
 	}
+
 	
 }

@@ -9,7 +9,7 @@ public interface RepositorioCliente{
 	
 	public Cliente crear (Cliente cliente);
 	
-	public Optional<Cliente> buscarPorCedula(String cedula);
+	public Optional<Cliente> buscarClientePorCedula(String cedula);
 	
 	public boolean existePorCedula(String cedula);
 }

@@ -4,6 +4,8 @@ import static org.junit.jupiter.api.Assertions.assertThrows;
 
 import org.junit.Test;
 
+import com.ceiba.adn.taximetrovirtual.dominio.excepcion.ExcepcionFormatoCedulaInvalido;
+
 
 public class ValidarDatosTest {
 	private static final String MSG_CEDULA_TIENE_CARACTERES_NO_NUMERICOS = "La cedula debe contener solo caracteres numericos";
@@ -15,7 +17,7 @@ public class ValidarDatosTest {
 		String cedulaConCaracteresNoNumericos = "1'104.098.093";
 
 		// act / assert
-		assertThrows(IllegalArgumentException.class, 
+		assertThrows(ExcepcionFormatoCedulaInvalido.class, 
 						() ->  ValidarDatos.validarCedula(cedulaConCaracteresNoNumericos), 
 						MSG_CEDULA_TIENE_CARACTERES_NO_NUMERICOS);	    
 	}
@@ -26,7 +28,7 @@ public class ValidarDatosTest {
 		String cedulaConCaracteresNoNumericos = " 1 104 098 093 ";
 
 		// act / assert
-		assertThrows(IllegalArgumentException.class, 
+		assertThrows(ExcepcionFormatoCedulaInvalido.class, 
 						() ->  ValidarDatos.validarCedula(cedulaConCaracteresNoNumericos), 
 						MSG_CEDULA_TIENE_ESPACIOS);	    
 	}

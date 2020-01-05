@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.ceiba.adn.taximetrovirtual.aplicacion.dto.CarreraDTO;
 import com.ceiba.adn.taximetrovirtual.aplicacion.manejador.ManejadorCrearCarrera;
-import com.ceiba.adn.taximetrovirtual.infraestructura.adaptador.repositorio.entidad.CarreraEntidad;
+import com.ceiba.adn.taximetrovirtual.dominio.modelo.Carrera;
 
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
@@ -34,20 +34,13 @@ public class ControladorCarrera {
 	public ControladorCarrera(ManejadorCrearCarrera servicioCarrera) {
 		this.servicioCarrera = servicioCarrera;
 	}
-	/*
+
 	@PostMapping
 	@ApiOperation(value = "Crear Carrera", notes = "Servicio para Crear un Carrera")
 	@ApiResponses(value = { @ApiResponse(code = 201, message = "Carrera Creada Exitosamente"),
 			@ApiResponse(code = 400, message = "Solicitud invalida") })
-	public ResponseEntity<CarreraEntidad> crearCarrera(@RequestBody CarreraDTO carrera) {
-		CarreraEntidad carreraEntidad = new CarreraEntidad();
-		//Como se hacen con las relaciones, 
-		
-		carreraEntidad.setId(carrera.getId());
-		
-		carreraEntidad.setClienteId(carrera.getClienteId());
-		carreraEntidad.setFechaInicio(carrera.getFechaInicio());
-		return new ResponseEntity<>(this.servicioCarrera.ejecutar(carreraEntidad), HttpStatus.CREATED);
+	public ResponseEntity<Carrera> crearCarrera(@RequestBody CarreraDTO carreraDTO) {
+		return new ResponseEntity<>(this.servicioCarrera.ejecutar(carreraDTO), HttpStatus.CREATED);
 	}
-	*/
+
 }

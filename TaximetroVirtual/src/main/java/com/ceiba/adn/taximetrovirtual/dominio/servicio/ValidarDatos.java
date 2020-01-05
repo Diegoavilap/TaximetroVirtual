@@ -1,5 +1,7 @@
 package com.ceiba.adn.taximetrovirtual.dominio.servicio;
 
+import com.ceiba.adn.taximetrovirtual.dominio.excepcion.ExcepcionFormatoCedulaInvalido;
+
 /**
  * @author diego.avila
  *
@@ -18,7 +20,7 @@ public final class ValidarDatos {
 	 */
 	public static void validarCedula(String cedula) {
 		if (!esNumerico(cedula)) {
-			throw new IllegalArgumentException(MSG_CEDULA_TIENE_CARACTERES_NO_NUMERICOS);
+			throw new ExcepcionFormatoCedulaInvalido(MSG_CEDULA_TIENE_CARACTERES_NO_NUMERICOS);
 		}
 	}
 

@@ -2,12 +2,18 @@ package com.ceiba.adn.taximetrovirtual.aplicacion.dto;
 
 import java.time.LocalDateTime;
 
+import org.springframework.format.annotation.DateTimeFormat;
+
 import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 public class CarreraDTO {
 	private Long id;
 	private Long clienteId;
+	
+	@JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss")
+	@DateTimeFormat(pattern = "yyyy-MM-dd HH:mm:ss")
 	private LocalDateTime fechaInicio;
 
 	@JsonCreator
@@ -29,5 +35,11 @@ public class CarreraDTO {
 	public LocalDateTime getFechaInicio() {
 		return fechaInicio;
 	}
+
+	public void setClienteId(Long clienteId) {
+		this.clienteId = clienteId;
+	}
+	
+	
 
 }

@@ -30,8 +30,8 @@ public class BeansAplicacion {
 	}
 	
 	@Bean
-	public ServicioCrearCarrera servicioCrearcarrera (final RepositorioCarrera repositorioCarrera) {
-		return new ServicioCrearCarrera(repositorioCarrera);
+	public ServicioCrearCarrera servicioCrearcarrera (final RepositorioCarrera repositorioCarrera, final RepositorioCliente repositorioCliente) {
+		return new ServicioCrearCarrera(repositorioCarrera, repositorioCliente);
 	}
 	
 }

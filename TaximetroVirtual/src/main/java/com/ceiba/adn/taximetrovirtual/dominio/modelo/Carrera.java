@@ -13,6 +13,14 @@ public class Carrera {
 		this.fechaInicio = fechaInicio;
 	}
 
+	public void setFechaInicio(LocalDateTime fechaInicio) {
+		this.fechaInicio = fechaInicio;
+	}
+
+	public void setClienteId(Long clienteId) {
+		this.clienteId = clienteId;
+	}
+
 	public Long getId() {
 		return id;
 	}
