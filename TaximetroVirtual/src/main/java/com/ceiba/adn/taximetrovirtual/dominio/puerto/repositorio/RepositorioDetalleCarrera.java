@@ -1,8 +1,12 @@
 package com.ceiba.adn.taximetrovirtual.dominio.puerto.repositorio;
 
-import org.springframework.data.jpa.repository.JpaRepository;
+import java.util.List;
 
-import com.ceiba.adn.taximetrovirtual.infraestructura.adaptador.repositorio.entidad.DetalleCarreraEntidad;
+import com.ceiba.adn.taximetrovirtual.dominio.modelo.DetalleCarrera;
 
-public interface RepositorioDetalleCarrera extends JpaRepository<DetalleCarreraEntidad, Long>{
+public interface RepositorioDetalleCarrera{
+	
+	public DetalleCarrera crear (DetalleCarrera detalleCarrera);
+	
+	public List<DetalleCarrera> listar();
 }

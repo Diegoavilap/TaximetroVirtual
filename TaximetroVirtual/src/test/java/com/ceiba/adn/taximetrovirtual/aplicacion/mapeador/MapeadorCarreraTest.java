@@ -65,7 +65,7 @@ public class MapeadorCarreraTest {
 	 * Test encargado de valida que al rcibir un objeti Cliente OK se retorn un ClienteDTO 
 	 */
 	@Test
-	public void cuandoClienteOkEntoncesRetornaClienteDTO() {
+	public void cuandoCarreraOkEntoncesRetornaCarreraDTO() {
 		// arrange
 		Carrera carrera = new CarreraTestDataBuilder().build();
 

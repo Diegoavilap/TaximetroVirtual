@@ -22,8 +22,13 @@ public final class MapeadorCarreraEntidad {
 		if (Objects.isNull(carreraEntidad)) {
 			return null;
 		}
+		try {
 		return new Carrera(carreraEntidad.getId(), carreraEntidad.getClienteId().getId(),
 				carreraEntidad.getFechaInicio());
+		}catch (Exception e) {
+			throw new RuntimeException("Aqui empezo todo" + carreraEntidad.getClienteId().getId());
+		}
+		
 	}
 
 	/**

@@ -1,6 +1,7 @@
 package com.ceiba.adn.taximetrovirtual.infraestructura.adaptador.repositorio.entidad;
 
 import java.math.BigDecimal;
+import java.time.LocalDateTime;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
@@ -16,9 +17,16 @@ import javax.persistence.Table;
 @Table(name = "DETALLE_CARRERA")
 public class DetalleCarreraEntidad {
 
-	public DetalleCarreraEntidad() {
-		// TODO Auto-generated constructor stub
+	public DetalleCarreraEntidad() {}
+
+	
+	public DetalleCarreraEntidad(Long id, CarreraEntidad carrera, LocalDateTime fechaFin, BigDecimal costo) {
+		this.id = id;
+		this.carrera = carrera;
+		this.fechaFin = fechaFin;
+		this.costo = costo;
 	}
+
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
@@ -30,7 +38,7 @@ public class DetalleCarreraEntidad {
 	private CarreraEntidad carrera;
 
 	@Column(name = "FECHA_FIN")
-	private String fechaFin;
+	private LocalDateTime fechaFin;
 
 	@Column(name = "COSTO")
 	private BigDecimal costo;
@@ -43,7 +51,7 @@ public class DetalleCarreraEntidad {
 		return carrera;
 	}
 
-	public String getFechaFin() {
+	public LocalDateTime getFechaFin() {
 		return fechaFin;
 	}
 

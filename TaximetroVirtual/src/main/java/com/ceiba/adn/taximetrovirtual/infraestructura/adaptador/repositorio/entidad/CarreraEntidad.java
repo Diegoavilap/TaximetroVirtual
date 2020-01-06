@@ -16,9 +16,7 @@ import javax.persistence.Table;
 @Table(name = "CARRERA")
 public class CarreraEntidad {
 
-	public CarreraEntidad() {
-		// TODO Auto-generated constructor stub
-	}
+	public CarreraEntidad() {}
 
 	public CarreraEntidad(Long id, ClienteEntidad clienteId, LocalDateTime fechaInicio) {
 		this.id = id;
@@ -56,5 +54,10 @@ public class CarreraEntidad {
 	public DetalleCarreraEntidad getDetalleCarrera() {
 		return detalleCarrera;
 	}
+
+	public void setId(Long id) {
+		this.id = id;
+	}
+	
 
 }
