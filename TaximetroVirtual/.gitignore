@@ -1,0 +1,32 @@
+HELP.md
+/TaximetroVirtual/.gradle
+/TaximetroVirtual/build/
+!gradle/wrapper/gradle-wrapper.jar
+!**/src/main/**
+!**/src/test/**
+
+### STS ###
+/TaximetroVirtual/.apt_generated
+/TaximetroVirtual/.classpath
+/TaximetroVirtual/.factorypath
+/TaximetroVirtual/.project
+/TaximetroVirtual/.settings
+/TaximetroVirtual/.springBeans
+/TaximetroVirtual/.sts4-cache
+
+### IntelliJ IDEA ###
+.idea
+*.iws
+*.iml
+*.ipr
+out/
+
+### NetBeans ###
+/TaximetroVirtual/nbproject/private/
+/TaximetroVirtual/nbbuild/
+/TaximetroVirtual/dist/
+/TaximetroVirtual/nbdist/
+/TaximetroVirtual/.nb-gradle/
+
+### VS Code ###
+/TaximetroVirtual/.vscode/

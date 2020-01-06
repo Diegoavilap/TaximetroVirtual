@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>ManejadorCrearCarrera.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">TaximetroVirtual</a> &gt; <a href="index.source.html" class="el_package">com.ceiba.adn.taximetrovirtual.aplicacion.manejador</a> &gt; <span class="el_source">ManejadorCrearCarrera.java</span></div><h1>ManejadorCrearCarrera.java</h1><pre class="source lang-java linenums">package com.ceiba.adn.taximetrovirtual.aplicacion.manejador;
+
+import com.ceiba.adn.taximetrovirtual.aplicacion.dto.CarreraDTO;
+import com.ceiba.adn.taximetrovirtual.aplicacion.mapeador.MapeadorCarrera;
+import com.ceiba.adn.taximetrovirtual.dominio.modelo.Carrera;
+import com.ceiba.adn.taximetrovirtual.dominio.servicio.ServicioCrearCarrera;
+
+/**
+ * Clase para definir el servicio de creacion de carrera
+ * 
+ * @author diego.avila
+ *
+ */
+public class ManejadorCrearCarrera {
+	private final ServicioCrearCarrera servicioCrearCarrera;
+
+<span class="nc" id="L17">	public ManejadorCrearCarrera(ServicioCrearCarrera servicioCrearCarrera) {</span>
+<span class="nc" id="L18">		this.servicioCrearCarrera = servicioCrearCarrera;</span>
+<span class="nc" id="L19">	}</span>
+	
+	/**
+	 * Metodo encargado de realizar la operacion de creacion de una carrera
+	 * @param carreraEntidad
+	 * @return
+	 */
+	
+	public Carrera ejecutar(CarreraDTO carreraDTO) {
+<span class="nc" id="L28">		Carrera carrera = MapeadorCarrera.mapearAModelo(carreraDTO);</span>
+<span class="nc" id="L29">		return this.servicioCrearCarrera.crearCarrera(carrera);</span>
+	}
+	
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.5.201910111838</span></div></body></html>
