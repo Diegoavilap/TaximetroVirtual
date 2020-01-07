@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.ceiba.adn.taximetrovirtual.infraestructura.mapeador.MapeadorDetalleCarreraEntidadTest" tests="2" skipped="0" failures="0" errors="0" timestamp="2020-01-07T13:31:02" hostname="DIEGO-AVILA" time="0.004">
+<testsuite name="com.ceiba.adn.taximetrovirtual.infraestructura.mapeador.MapeadorDetalleCarreraEntidadTest" tests="2" skipped="0" failures="0" errors="0" timestamp="2020-01-07T14:30:44" hostname="DIEGO-AVILA" time="0.002">
   <properties/>
-  <testcase name="cuandoEntidadDetalleCarreraEsNullEntoncesRetornaNull" classname="com.ceiba.adn.taximetrovirtual.infraestructura.mapeador.MapeadorDetalleCarreraEntidadTest" time="0.003"/>
-  <testcase name="cuandoEntidadDetalleCarreraEsOkEntoncesRetornaDetalleCarrera" classname="com.ceiba.adn.taximetrovirtual.infraestructura.mapeador.MapeadorDetalleCarreraEntidadTest" time="0.001"/>
+  <testcase name="cuandoEntidadDetalleCarreraEsNullEntoncesRetornaNull" classname="com.ceiba.adn.taximetrovirtual.infraestructura.mapeador.MapeadorDetalleCarreraEntidadTest" time="0.002"/>
+  <testcase name="cuandoEntidadDetalleCarreraEsOkEntoncesRetornaDetalleCarrera" classname="com.ceiba.adn.taximetrovirtual.infraestructura.mapeador.MapeadorDetalleCarreraEntidadTest" time="0.0"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>
