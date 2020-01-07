@@ -1,5 +1,8 @@
 package com.ceiba.adn.taximetrovirtual.dominio.servicio;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
 import com.ceiba.adn.taximetrovirtual.dominio.excepcion.ExcepcionFormatoCedulaInvalido;
 
 /**
@@ -7,7 +10,7 @@ import com.ceiba.adn.taximetrovirtual.dominio.excepcion.ExcepcionFormatoCedulaIn
  *
  */
 public final class ValidarDatos {
-	
+	private static final Logger LOG = LogManager.getLogger(ValidarDatos.class);
 	private ValidarDatos() {
 		throw new AssertionError("Esta clase no debe ser instanciada");
 	}
@@ -20,7 +23,9 @@ public final class ValidarDatos {
 	 */
 	public static void validarCedula(String cedula) {
 		if (!esNumerico(cedula)) {
-			throw new ExcepcionFormatoCedulaInvalido(MSG_CEDULA_TIENE_CARACTERES_NO_NUMERICOS);
+			ExcepcionFormatoCedulaInvalido excepcion = new ExcepcionFormatoCedulaInvalido(MSG_CEDULA_TIENE_CARACTERES_NO_NUMERICOS);
+			LOG.warn(excepcion);
+			throw excepcion;
 		}
 	}
 

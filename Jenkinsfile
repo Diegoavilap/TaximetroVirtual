@@ -41,7 +41,7 @@ pipeline {
       steps {
         echo "------------>Unit Tests<------------"
         dir("TaximetroVirtual"){
-          sh 'gradle --b ./build.gradle clean test'
+          sh 'gradle --b ./build.gradle clean test jacocoTestReport'
         }
       }
     }

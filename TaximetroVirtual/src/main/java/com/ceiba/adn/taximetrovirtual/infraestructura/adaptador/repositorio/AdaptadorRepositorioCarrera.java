@@ -1,8 +1,6 @@
 package com.ceiba.adn.taximetrovirtual.infraestructura.adaptador.repositorio;
 
-import java.util.List;
 import java.util.Optional;
-import java.util.stream.Collectors;
 
 import org.springframework.stereotype.Component;
 
@@ -24,12 +22,6 @@ public class AdaptadorRepositorioCarrera implements RepositorioCarrera {
 	public Carrera crear(Carrera carrera) {
 		CarreraEntidad entidad = MapeadorCarreraEntidad.mapearAEntidad(carrera);
 		return MapeadorCarreraEntidad.mapearAModelo(carreraJPA.save(entidad));
-	}
-
-	@Override
-	public List<Carrera> listar() {
-		List<CarreraEntidad> carreras = carreraJPA.findAll();
-		return carreras.stream().map(MapeadorCarreraEntidad::mapearAModelo).collect(Collectors.toList());
 	}
 
 	@Override
