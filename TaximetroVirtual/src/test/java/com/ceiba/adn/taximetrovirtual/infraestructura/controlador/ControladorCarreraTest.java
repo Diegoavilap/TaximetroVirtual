@@ -20,17 +20,17 @@ import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 import org.springframework.web.context.WebApplicationContext;
 
 import com.ceiba.adn.taximetrovirtual.TaximetroVirtualApplication;
-import com.ceiba.adn.taximetrovirtual.aplicacion.dto.ClienteDTO;
-import com.ceiba.adn.taximetrovirtual.testdatabuilder.ClienteDTOTestDataBuilder;
+import com.ceiba.adn.taximetrovirtual.aplicacion.dto.CarreraDTO;
+import com.ceiba.adn.taximetrovirtual.testdatabuilder.CarreraDTOTestDataBuilder;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest(classes = TaximetroVirtualApplication.class)
 @WebAppConfiguration
 @TestPropertySource(locations = "classpath:application-test.properties")
-public class ControladorClienteTest {
-
-	private static final String URL_BASE = "http://localhost:8080/api/cliente";
+public class ControladorCarreraTest {
+	
+	private static final String URL_BASE = "http://localhost:8080/api/carrera";
 
 	@Autowired
 	private ObjectMapper objectMapperTest;
@@ -44,21 +44,20 @@ public class ControladorClienteTest {
 	public void setup() throws Exception {
 		this.mockMvc = MockMvcBuilders.webAppContextSetup(this.wac).build();
 	}
-
 	
 	@Test
+	@Sql(executionPhase = ExecutionPhase.BEFORE_TEST_METHOD, scripts = "/scripts/crear-cliente.sql")
 	@Sql(executionPhase = ExecutionPhase.AFTER_TEST_METHOD, scripts = "/scripts/cliente-data.sql")
-	public void cuandoPeticionCrearClienteCedulaNuevaEntoncesDeberiaCrear() throws Exception {
+	public void cuandoPeticionCrearCarreraCorrectaEntoncesDeberiaCrear() throws Exception {
 		// arrange
-		ClienteDTO clienteDTO = new ClienteDTOTestDataBuilder().build();
+		CarreraDTO carreraDTO = new CarreraDTOTestDataBuilder().build();
 
 		// act - assert
 		mockMvc.perform(post(URL_BASE)
 				.contentType(MediaType.APPLICATION_JSON)
-				.content(objectMapperTest.writeValueAsString(clienteDTO)))
+				.content(objectMapperTest.writeValueAsString(carreraDTO)))
 				.andDo(print())
 				.andExpect(status().isCreated());
 	}
-	
-	
+
 }
