@@ -1,5 +1,7 @@
 package com.ceiba.adn.taximetrovirtual.aplicacion.manejador;
 
+import org.springframework.transaction.annotation.Transactional;
+
 import com.ceiba.adn.taximetrovirtual.aplicacion.dto.ClienteDTO;
 import com.ceiba.adn.taximetrovirtual.aplicacion.mapeador.MapeadorCliente;
 import com.ceiba.adn.taximetrovirtual.dominio.modelo.Cliente;
@@ -25,6 +27,7 @@ public class ManejadorCrearCliente {
 	 * @param clienteDTO
 	 * @return
 	 */
+	@Transactional
 	public Cliente ejecutar(ClienteDTO clienteDTO) {
 		Cliente cliente = MapeadorCliente.mapearAModelo(clienteDTO);
 		return this.servicioCrearCliente.crearCliente(cliente); 

@@ -24,22 +24,21 @@ public class CarreraDTO {
 		this.fechaInicio = fechaInicio;
 	}
 
-	public Long getId() {
-		return id;
+	public LocalDateTime getFechaInicio() {
+		return fechaInicio;
 	}
 
 	public Long getClienteId() {
 		return clienteId;
 	}
 
-	public LocalDateTime getFechaInicio() {
-		return fechaInicio;
-	}
-
 	public void setClienteId(Long clienteId) {
 		this.clienteId = clienteId;
 	}
 	
+	public Long getId() {
+		return id;
+	}
 	
 
 }

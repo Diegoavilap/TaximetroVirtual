@@ -27,6 +27,25 @@ dependencies {
     compile("io.springfox:springfox-swagger-ui:2.9.2")
 }
 
+sourceSets {
+    main {
+        java {
+            srcDir 'source'
+        }
+        resources {
+            srcDir 'resources'
+        }
+    }
+    test {
+        java {
+            srcDir 'test'
+        }
+        resources {
+            srcDir 'test'
+        }
+    }
+}
+
 test {
 	useJUnitPlatform()
 }
@@ -42,7 +61,7 @@ sonarqube {
 		property "sonar.java.binaries", "build/classes/java/main"
 		property "sonar.tests", "src/test/java"
 		property "sonar.test.binaries", "build/classes/java/test"
-		property "sonar.coverage.jacoco.xmlReportPaths", "path/reports/jacoco/jacocoTestReport.xml"
+		property "sonar.coverage.jacoco.xmlReportPaths", "build/reports/jacoco/jacocoTestReport.xml"
 		property "sonar.junit.reportPaths", "build/test-results/test"
 	}
 }

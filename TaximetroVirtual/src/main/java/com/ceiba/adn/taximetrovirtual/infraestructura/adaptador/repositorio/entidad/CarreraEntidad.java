@@ -51,10 +51,6 @@ public class CarreraEntidad {
 		return fechaInicio;
 	}
 
-	public DetalleCarreraEntidad getDetalleCarrera() {
-		return detalleCarrera;
-	}
-
 	public void setId(Long id) {
 		this.id = id;
 	}

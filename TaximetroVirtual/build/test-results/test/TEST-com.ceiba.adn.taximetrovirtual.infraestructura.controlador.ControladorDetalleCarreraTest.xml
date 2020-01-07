@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.ceiba.adn.taximetrovirtual.infraestructura.controlador.ControladorDetalleCarreraTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2020-01-10T16:18:23" hostname="DIEGO-AVILA" time="0.071">
+  <properties/>
+  <testcase name="cuandoPeticionCrearDetalleCarreraCorrectaEntoncesDeberiaCrear" classname="com.ceiba.adn.taximetrovirtual.infraestructura.controlador.ControladorDetalleCarreraTest" time="0.071"/>
+  <system-out><![CDATA[2020-01-10 11:18:23.638  INFO 10468 --- [    Test worker] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2020-01-10 11:18:23.639  INFO 10468 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2020-01-10 11:18:23.642  INFO 10468 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 3 ms
+Hibernate: select carreraent0_.id as id1_0_0_, carreraent0_.cliente_id as cliente_3_0_0_, carreraent0_.fecha_inicio as fecha_in2_0_0_, clienteent1_.id as id1_1_1_, clienteent1_.apellido as apellido2_1_1_, clienteent1_.cedula as cedula3_1_1_, clienteent1_.nombre as nombre4_1_1_, detallecar2_.id as id1_2_2_, detallecar2_.carrera_id as carrera_4_2_2_, detallecar2_.costo as costo2_2_2_, detallecar2_.fecha_fin as fecha_fi3_2_2_ from carrera carreraent0_ left outer join cliente clienteent1_ on carreraent0_.cliente_id=clienteent1_.id left outer join detalle_carrera detallecar2_ on carreraent0_.id=detallecar2_.carrera_id where carreraent0_.id=?
+Hibernate: select detallecar0_.id as id1_2_1_, detallecar0_.carrera_id as carrera_4_2_1_, detallecar0_.costo as costo2_2_1_, detallecar0_.fecha_fin as fecha_fi3_2_1_, carreraent1_.id as id1_0_0_, carreraent1_.cliente_id as cliente_3_0_0_, carreraent1_.fecha_inicio as fecha_in2_0_0_ from detalle_carrera detallecar0_ left outer join carrera carreraent1_ on detallecar0_.carrera_id=carreraent1_.id where detallecar0_.id=?
+Hibernate: call next value for hibernate_sequence
+Hibernate: insert into detalle_carrera (carrera_id, costo, fecha_fin, id) values (?, ?, ?, ?)
+Hibernate: update carrera set cliente_id=?, fecha_inicio=? where id=?
+
+MockHttpServletRequest:
+      HTTP Method = POST
+      Request URI = /api/detalleCarrera
+       Parameters = {}
+          Headers = [Content-Type:"application/json", Content-Length:"69"]
+             Body = <no character encoding set>
+    Session Attrs = {}
+
+Handler:
+             Type = com.ceiba.adn.taximetrovirtual.infraestructura.controlador.ControladorDetalleCarrera
+           Method = com.ceiba.adn.taximetrovirtual.infraestructura.controlador.ControladorDetalleCarrera#crearDetalleCarrera(DetalleCarreraDTO)
+
+Async:
+    Async started = false
+     Async result = null
+
+Resolved Exception:
+             Type = null
+
+ModelAndView:
+        View name = null
+             View = null
+            Model = null
+
+FlashMap:
+       Attributes = null
+
+MockHttpServletResponse:
+           Status = 201
+    Error message = null
+          Headers = [Vary:"Origin", "Access-Control-Request-Method", "Access-Control-Request-Headers", Content-Type:"application/json"]
+     Content type = application/json
+             Body = {"id":3,"carreraId":1,"fechaFin":"2020-01-10T11:18:23.668","costo":1764000}
+    Forwarded URL = null
+   Redirected URL = null
+          Cookies = []
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

@@ -18,7 +18,7 @@ public class CarreraDTOTestDataBuilder {
 	
 	public CarreraDTOTestDataBuilder() {
 		this.id = 1L;
-		this.clienteId = 1L;
+		this.clienteId = 1109542654L;
 		this.fechaInicio = LocalDateTime.of(2020, 01, 2, 9, 0);
 	}
 	

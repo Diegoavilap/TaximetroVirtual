@@ -4,6 +4,13 @@ import org.springframework.data.jpa.repository.JpaRepository;
 
 import com.ceiba.adn.taximetrovirtual.infraestructura.adaptador.repositorio.entidad.CarreraEntidad;
 
-public interface RepositorioCarreraJPA extends JpaRepository<CarreraEntidad, Long>{
+/**
+ * Interfaz que permite utilizar todos los metodos que proporciona JPA
+ * Repository para la Entidad Carrera
+ * 
+ * @author diego.avila
+ *
+ */
+public interface RepositorioCarreraJPA extends JpaRepository<CarreraEntidad, Long> {
 
 }

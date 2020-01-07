@@ -21,10 +21,7 @@ public class SwaggerConfiguration {
 	public Docket documentation() {
         return new Docket(DocumentationType.SWAGGER_2)
                 .select()
-                //las peticiones que se van a manejar son las de las clase que tienen
-                //la clase RestController
                 .apis(RequestHandlerSelectors.withClassAnnotation(RestController.class))
-                //busque todo los elementos que tengan esa anotacion
                 .paths(PathSelectors.any())
                 .build();
     }

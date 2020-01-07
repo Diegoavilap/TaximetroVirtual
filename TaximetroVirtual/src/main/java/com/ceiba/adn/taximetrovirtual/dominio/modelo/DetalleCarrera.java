@@ -41,6 +41,10 @@ public class DetalleCarrera {
 	public void setCosto(BigDecimal costo) {
 		this.costo = costo;
 	}
+
+	public void setCarreraId(Long carreraId) {
+		this.carreraId = carreraId;
+	}
 	
 
 }
