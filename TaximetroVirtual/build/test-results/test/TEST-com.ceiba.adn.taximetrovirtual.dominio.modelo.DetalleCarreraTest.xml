@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.ceiba.adn.taximetrovirtual.dominio.modelo.DetalleCarreraTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2019-12-18T20:50:11" hostname="DIEGO-AVILA" time="0.019">
-  <properties/>
-  <testcase name="calcularCostoTestDiaEntreSemanaYHorarioNomal" classname="com.ceiba.adn.taximetrovirtual.dominio.modelo.DetalleCarreraTest" time="0.019"/>
-  <system-out><![CDATA[]]></system-out>
-  <system-err><![CDATA[]]></system-err>
-</testsuite>

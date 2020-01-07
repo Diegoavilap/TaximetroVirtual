@@ -27,6 +27,25 @@ dependencies {
     compile("io.springfox:springfox-swagger-ui:2.9.2")
 }
 
+sourceSets {
+    main {
+        java {
+            srcDir 'source'
+        }
+        resources {
+            srcDir 'resources'
+        }
+    }
+    test {
+        java {
+            srcDir 'test'
+        }
+        resources {
+            srcDir 'test'
+        }
+    }
+}
+
 test {
 	useJUnitPlatform()
 }

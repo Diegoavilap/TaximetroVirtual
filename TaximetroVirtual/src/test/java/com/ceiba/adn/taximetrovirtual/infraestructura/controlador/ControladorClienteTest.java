@@ -6,7 +6,6 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 
 import org.junit.After;
 import org.junit.Before;
-import org.junit.Ignore;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -29,7 +28,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 @RunWith(SpringRunner.class)
 @SpringBootTest(classes = TaximetroVirtualApplication.class)
 @WebAppConfiguration
-@TestPropertySource(locations = "classpath:application.properties")
+@TestPropertySource(locations = "classpath:application-test.properties")
 public class ControladorClienteTest {
 
 	private static final String URL_BASE = "http://localhost:8080/api/cliente";
@@ -47,7 +46,7 @@ public class ControladorClienteTest {
 		this.mockMvc = MockMvcBuilders.webAppContextSetup(this.wac).build();
 	}
 
-	@After
+	//@After
 	//@Sql(scripts = "/scripts/cliente-data.sql")
 //	public void tearDown() throws Exception{
 //		final Statement statement = dataSource.getConnection().createStatement();
@@ -55,8 +54,7 @@ public class ControladorClienteTest {
 //	}
 
 	@Test
-	@Ignore
-	@Sql(executionPhase = ExecutionPhase.BEFORE_TEST_METHOD, scripts = "/scripts/cliente-data.sql")
+	//@Sql(executionPhase = ExecutionPhase.BEFORE_TEST_METHOD, scripts = "/scripts/cliente-data.sql")
 	@Sql(executionPhase = ExecutionPhase.AFTER_TEST_METHOD, scripts = "/scripts/cliente-data.sql")
 	public void cuandoPeticionCrearClienteYIdNoNuloYNoDuplicadoCorrectaEntoncesDeberiaCrear() throws Exception {
 		// arrange
