@@ -1,10 +1,7 @@
 import React from 'react';
 
 class CrearClienteForm extends React.Component {
-  handleClick = e => {
-    console.log('Button was clicked');
-  };
-
+  
   render() {
     return (
       <div>

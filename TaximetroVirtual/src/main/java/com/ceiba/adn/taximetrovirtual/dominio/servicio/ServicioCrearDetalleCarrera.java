@@ -23,6 +23,7 @@ public class ServicioCrearDetalleCarrera {
 		Carrera carreraRegistrada = repositorioCarrera.buscarPorId(detalleCarrera.getCarreraId())
 				.orElseThrow(() -> new ExcepcionCarreraNoEncontrada(
 						"No se encuentra Registrada una carrera con el id proporcionado"));
+		detalleCarrera.setCarreraId(carreraRegistrada.getId());
 		detalleCarrera.setFechaFin(LocalDateTime.now());
 		ValidarFechas.validarFechaFinalPosteriorAFechaInicial(detalleCarrera.getFechaFin(), carreraRegistrada.getFechaInicio());
 		detalleCarrera.setCosto(Taximetro.calcularCosto(carreraRegistrada, detalleCarrera.getFechaFin()));

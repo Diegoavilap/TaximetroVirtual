@@ -1,6 +1,6 @@
 package com.ceiba.adn.taximetrovirtual.dominio.servicio;
 
-import com.ceiba.adn.taximetrovirtual.dominio.excepcion.ExcepcionDatoYaRegistrado;
+import com.ceiba.adn.taximetrovirtual.dominio.excepcion.ExcepcionCedulaYaRegistrada;
 import com.ceiba.adn.taximetrovirtual.dominio.modelo.Cliente;
 import com.ceiba.adn.taximetrovirtual.dominio.puerto.repositorio.RepositorioCliente;
 
@@ -15,7 +15,7 @@ public class ServicioCrearCliente {
 	
 	public Cliente crearCliente(Cliente cliente) {
 		if (repositorio.existePorCedula(cliente.getCedula())) {
-			throw new ExcepcionDatoYaRegistrado(MSG_CEDULA_YA_REGISTRADA);
+			throw new ExcepcionCedulaYaRegistrada(MSG_CEDULA_YA_REGISTRADA);
 		}
 			return repositorio.crear(cliente);
 	}

@@ -39,20 +39,8 @@ public class DetalleCarreraDTO {
 		return costo;
 	}
 
-	public void setId(Long id) {
-		this.id = id;
-	}
-
 	public void setCarrera(Long carreraId) {
 		this.carreraId = carreraId;
-	}
-
-	public void setFechaFin(LocalDateTime fechaFin) {
-		this.fechaFin = fechaFin;
-	}
-
-	public void setCosto(BigDecimal costo) {
-		this.costo = costo;
 	}
 
 	

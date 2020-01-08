@@ -1,4 +1,5 @@
 import React from 'react';
+import Axios from 'axios';
 
 import CrearClienteForm from '../componentes/CrearClienteForm';
 import PageLoading from '../componentes/PageLoading';
@@ -28,24 +29,15 @@ class CrearCliente extends React.Component {
     e.preventDefault();
     this.setState({ loading: true, error: null });
     
-    fetch(
+    Axios.post(
         'http://localhost:8080/api/cliente',
-        {
-            method: 'POST',
-            headers: {
-                'Content-Type':'application/json'
-            },
-            body: JSON.stringify(this.state.form)
-        }
+         this.state.form
+        
     ).then(response => {
-        if (!response.ok) {
-            throw Error(JSON.parse(response));
-        }
         this.setState({ loading: false });
        // this.props.history.push('/cliente');
     }).catch(error =>{
-        console.log(error);
-        this.setState({ loading: false, error: error });
+        this.setState({ loading: false, error: {message: error.response.data.message} });
     });
   };
 

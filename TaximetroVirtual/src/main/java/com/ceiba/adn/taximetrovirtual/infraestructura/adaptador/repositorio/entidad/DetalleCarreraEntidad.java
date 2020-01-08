@@ -33,7 +33,7 @@ public class DetalleCarreraEntidad {
 	@Column(name = "ID")
 	private Long id;
 
-	@OneToOne(cascade = CascadeType.ALL)
+	@OneToOne(cascade = CascadeType.MERGE)
 	@JoinColumn(name = "CARRERA_ID", referencedColumnName = "id")
 	private CarreraEntidad carrera;
 
