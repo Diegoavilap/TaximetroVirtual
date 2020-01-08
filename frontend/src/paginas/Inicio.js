@@ -7,14 +7,14 @@ export default class Home extends Component {
   render() {
     return (
       <div className="Home">
-            <div className="Home__col col-12 col-md-6 .offset-md-3">
+            <div className="Home__col col-12 col-md-6">
               <h1>Taximetro Virtual</h1>
               <div class="row">
                 <Link className="btn btn-primary mr-4" to="/carrera/crear">
                   Iniciar Carrera
                 </Link>
 
-                <Link className="btn btn-primary mr-4" to="/cliente">
+                <Link className="btn btn-primary mr-4" to="/cliente/crear">
                   Crear Cliente
                 </Link>
 

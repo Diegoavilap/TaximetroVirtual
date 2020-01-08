@@ -23,7 +23,7 @@ import io.swagger.annotations.ApiResponse;
  * @author diego.avila
  *
  */
-@CrossOrigin
+@CrossOrigin(origins = "*")
 @RestController
 @RequestMapping("/api/cliente")
 @Api(tags = "cliente")
