@@ -6,12 +6,14 @@ import org.springframework.context.annotation.Configuration;
 import com.ceiba.adn.taximetrovirtual.aplicacion.manejador.ManejadorCrearCarrera;
 import com.ceiba.adn.taximetrovirtual.aplicacion.manejador.ManejadorCrearCliente;
 import com.ceiba.adn.taximetrovirtual.aplicacion.manejador.ManejadorCrearDetalleCarrera;
+import com.ceiba.adn.taximetrovirtual.aplicacion.manejador.ManejadorListarCliente;
 import com.ceiba.adn.taximetrovirtual.dominio.puerto.repositorio.RepositorioCarrera;
 import com.ceiba.adn.taximetrovirtual.dominio.puerto.repositorio.RepositorioCliente;
 import com.ceiba.adn.taximetrovirtual.dominio.puerto.repositorio.RepositorioDetalleCarrera;
 import com.ceiba.adn.taximetrovirtual.dominio.servicio.ServicioCrearCarrera;
 import com.ceiba.adn.taximetrovirtual.dominio.servicio.ServicioCrearCliente;
 import com.ceiba.adn.taximetrovirtual.dominio.servicio.ServicioCrearDetalleCarrera;
+import com.ceiba.adn.taximetrovirtual.dominio.servicio.ServicioListarClientes;
 
 @Configuration
 public class BeansAplicacion {
@@ -24,6 +26,16 @@ public class BeansAplicacion {
 	@Bean
 	public ServicioCrearCliente servicioCrearCliente(final RepositorioCliente repositorioCliente) {
 		return new ServicioCrearCliente(repositorioCliente);
+	}
+	
+	@Bean
+	public ManejadorListarCliente manejadorListarCliente(final ServicioListarClientes servicioListarCliente) {
+		return new ManejadorListarCliente(servicioListarCliente);
+	}
+
+	@Bean
+	public ServicioListarClientes servicioListarClientes(final RepositorioCliente repositorioCliente) {
+		return new ServicioListarClientes(repositorioCliente);
 	}
 
 	@Bean

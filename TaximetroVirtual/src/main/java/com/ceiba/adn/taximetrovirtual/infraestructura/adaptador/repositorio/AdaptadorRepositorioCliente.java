@@ -1,6 +1,8 @@
 package com.ceiba.adn.taximetrovirtual.infraestructura.adaptador.repositorio;
 
+import java.util.List;
 import java.util.Optional;
+import java.util.stream.Collectors;
 
 import org.springframework.stereotype.Component;
 
@@ -10,14 +12,14 @@ import com.ceiba.adn.taximetrovirtual.infraestructura.adaptador.repositorio.enti
 import com.ceiba.adn.taximetrovirtual.infraestructura.mapeador.MapeadorClienteEntidad;
 
 @Component
-public class AdaptadorRepositorioCliente implements RepositorioCliente{
+public class AdaptadorRepositorioCliente implements RepositorioCliente {
 
 	private RepositorioClienteJPA clienteJPA;
-	
+
 	public AdaptadorRepositorioCliente(RepositorioClienteJPA clienteJPA) {
 		this.clienteJPA = clienteJPA;
 	}
-	
+
 	@Override
 	public Cliente crear(Cliente cliente) {
 		ClienteEntidad entidad = MapeadorClienteEntidad.mapearAEntidad(cliente);
@@ -34,5 +36,10 @@ public class AdaptadorRepositorioCliente implements RepositorioCliente{
 		return clienteJPA.existsByCedula(cedula);
 	}
 
-	
+	@Override
+	public List<Cliente> listar() {
+		List<ClienteEntidad> entidades = clienteJPA.findAll();
+		return entidades.stream().map(MapeadorClienteEntidad::mapearAModelo).collect(Collectors.toList());
+	}
+
 }
