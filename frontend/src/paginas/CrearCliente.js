@@ -34,8 +34,8 @@ class CrearCliente extends React.Component {
          this.state.form
         
     ).then(response => {
-        this.setState({ loading: false });
-       // this.props.history.push('/cliente');
+       this.setState({ loading: false });
+       this.props.history.push('/cliente');
     }).catch(error =>{
         this.setState({ loading: false, error: {message: error.response.data.message} });
     });

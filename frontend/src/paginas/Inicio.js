@@ -18,8 +18,8 @@ export default class Home extends Component {
                   Crear Cliente
                 </Link>
 
-                <Link className="btn btn-primary mr-4" to="/carrera">
-                  Listar Carreras
+                <Link className="btn btn-primary mr-4" to="/cliente">
+                  Listar Clientes
                 </Link>
               </div>
               
