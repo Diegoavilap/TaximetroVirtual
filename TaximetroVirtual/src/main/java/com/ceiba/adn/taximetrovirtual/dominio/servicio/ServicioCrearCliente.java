@@ -7,7 +7,7 @@ import com.ceiba.adn.taximetrovirtual.dominio.puerto.repositorio.RepositorioClie
 public class ServicioCrearCliente {
 	
 	private RepositorioCliente repositorio;
-	private static String CEDULAREPETIDA = "La cedula proporcionada ya se encuentra registrada";
+	private static String msgCedulaYaRegistrada  = "La cedula proporcionada ya se encuentra registrada";
 	
 	public ServicioCrearCliente(RepositorioCliente repositorio) {
 		this.repositorio = repositorio;
@@ -15,7 +15,7 @@ public class ServicioCrearCliente {
 	
 	public Cliente crearCliente(Cliente cliente) {
 		if (repositorio.existePorCedula(cliente.getCedula())) {
-			throw new ExcepcionCedulaYaRegistrada(CEDULAREPETIDA);
+			throw new ExcepcionCedulaYaRegistrada(msgCedulaYaRegistrada);
 		}
 			return repositorio.crear(cliente);
 	}
