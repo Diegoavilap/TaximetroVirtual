@@ -22,10 +22,6 @@ public class ClienteDTO {
 		this.apellido = apellido;
 	}
 
-	public Long getId() {
-		return id;
-	}
-
 	public String getCedula() {
 		return cedula;
 	}
@@ -36,6 +32,10 @@ public class ClienteDTO {
 
 	public String getApellido() {
 		return apellido;
+	}
+	
+	public Long getId() {
+		return id;
 	}
 
 }

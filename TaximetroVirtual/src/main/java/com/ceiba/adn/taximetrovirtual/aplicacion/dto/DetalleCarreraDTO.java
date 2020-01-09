@@ -23,16 +23,16 @@ public class DetalleCarreraDTO {
 		this.costo = costo;
 	}
 
-	public Long getId() {
-		return id;
-	}
-
 	public Long getCarreraId() {
 		return carreraId;
 	}
 
 	public LocalDateTime getFechaFin() {
 		return fechaFin;
+	}
+	
+	public Long getId() {
+		return id;
 	}
 
 	public BigDecimal getCosto() {
