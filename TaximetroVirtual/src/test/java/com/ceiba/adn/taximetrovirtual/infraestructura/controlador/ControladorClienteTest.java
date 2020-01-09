@@ -60,5 +60,20 @@ public class ControladorClienteTest {
 				.andExpect(status().isCreated());
 	}
 	
+	@Test
+	@Sql(executionPhase = ExecutionPhase.BEFORE_TEST_METHOD, scripts = "/scripts/crear-cliente.sql")
+	@Sql(executionPhase = ExecutionPhase.AFTER_TEST_METHOD, scripts = "/scripts/cliente-data.sql")
+	public void cuandoPeticionCrearClienteCedulaExistenteEntoncesDeberiaLanzarExcepcion() throws Exception {
+		// arrange
+		ClienteDTO clienteDTO = new ClienteDTOTestDataBuilder().conCedula("1109542654").build();
+		
+		// act - assert
+		mockMvc.perform(post(URL_BASE)
+				.contentType(MediaType.APPLICATION_JSON)
+				.content(objectMapperTest.writeValueAsString(clienteDTO)))
+				.andDo(print())
+				.andExpect(status().isPreconditionFailed());
+	}
+	
 	
 }
