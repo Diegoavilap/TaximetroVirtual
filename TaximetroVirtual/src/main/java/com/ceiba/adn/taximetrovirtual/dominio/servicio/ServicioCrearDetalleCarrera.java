@@ -19,7 +19,6 @@ public class ServicioCrearDetalleCarrera {
 	}
 	
 	public DetalleCarrera crearDetalleCarrera(DetalleCarrera detalleCarrera) {
-		//Aqui toca poner todo la logica
 		Carrera carreraRegistrada = repositorioCarrera.buscarPorId(detalleCarrera.getCarreraId())
 				.orElseThrow(() -> new ExcepcionCarreraNoEncontrada(
 						"No se encuentra Registrada una carrera con el id proporcionado"));

@@ -4,14 +4,14 @@ import java.util.List;
 import java.util.Optional;
 import java.util.stream.Collectors;
 
-import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Repository;
 
 import com.ceiba.adn.taximetrovirtual.dominio.modelo.Cliente;
 import com.ceiba.adn.taximetrovirtual.dominio.puerto.repositorio.RepositorioCliente;
 import com.ceiba.adn.taximetrovirtual.infraestructura.adaptador.repositorio.entidad.ClienteEntidad;
 import com.ceiba.adn.taximetrovirtual.infraestructura.mapeador.MapeadorClienteEntidad;
 
-@Component
+@Repository
 public class AdaptadorRepositorioCliente implements RepositorioCliente {
 
 	private RepositorioClienteJPA clienteJPA;

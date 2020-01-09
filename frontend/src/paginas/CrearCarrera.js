@@ -41,7 +41,7 @@ class CrearCarrera extends React.Component {
 
     }).catch(error =>{        
         console.log(error);
-        this.setState({ loading: false, error: error });
+        this.setState({ loading: false, error: {message: error.response.data.message} });
     });
   };
 
@@ -56,15 +56,12 @@ class CrearCarrera extends React.Component {
         this.setState({ btn_end: true });
         this.setState({ costoCarrera: response.data.costo });
     }).catch(error =>{        
-        console.log(error);
-        this.setState({ loading: false, error: error.response.data.message });
+        console.log(error.response.data.message);
+        this.setState({ loading: false, error: {message: error.response.data.message}  });
     });
   };
 
   render() {
-    if (this.state.loading) {
-        return <PageLoading />;
-    }
     return (
       <React.Fragment>
         <div className="ClienteNuevo__hero"></div>

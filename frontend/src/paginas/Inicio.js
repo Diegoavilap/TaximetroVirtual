@@ -9,7 +9,7 @@ export default class Home extends Component {
       <div className="Home">
             <div className="Home__col col-12 col-md-6">
               <h1>Taximetro Virtual</h1>
-              <div class="row">
+              <div className="row">
                 <Link className="btn btn-primary mr-4" to="/carrera/crear">
                   Iniciar Carrera
                 </Link>

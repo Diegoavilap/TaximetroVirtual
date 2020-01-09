@@ -38,14 +38,8 @@ class Clientes extends React.Component {
     }
     return (
       <React.Fragment>
-        <div className="Clientes">
-          <div className="Clientes__hero">
-            <div className="Clientes__container">
-            </div>
-          </div>
-        </div>
-
         <div className="Clientes__container">
+          <h2 id="title_lista_clientes" className="mt-3">Listado de Clientes</h2>
           <div className="Clientes__buttons">
             <Link to="/Cliente/crear" className="btn btn-primary">
               Crear Cliente

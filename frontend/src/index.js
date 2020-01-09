@@ -1,9 +1,20 @@
+import * as synctractor from 'synctractor'; 
+
 import React from 'react';
 import ReactDOM from 'react-dom';
+
 import './global.css';
 import 'bootstrap/dist/css/bootstrap.css';
 
+
 import App from './componentes/App';
+
+
+synctractor.init();
+synctractor.monitorFetch();
+synctractor.monitorTimeout((_, t) => t !== 12345); 
+
+
 
 ReactDOM.render(<App />, document.getElementById('root'));
 

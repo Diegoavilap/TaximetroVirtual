@@ -22,7 +22,7 @@ function ListaClientes(props) {
       <ul className="list-unstyled">
         {clientes.map(cliente => {
           return (
-            <li key={cliente.id}>
+            <li className="item-lista" key={cliente.id}>
               <Link
                 className="text-reset text-decoration-none"
                 to={`/cliente/${cliente.id}`}
@@ -40,7 +40,7 @@ function ListaClientes(props) {
 class ListaClientesItem extends React.Component {
     render() {
         return (
-        <div className="ListaClientesItem">
+        <div className="ListaClientesItem mt-3">
             <div>
                 <h4>
                     Nombre: <span /> 

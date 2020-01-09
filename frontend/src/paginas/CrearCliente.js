@@ -47,9 +47,7 @@ class CrearCliente extends React.Component {
     }
     return (
       <React.Fragment>
-        <div className="ClienteNuevo__hero">
-          
-        </div>
+        <div className="ClienteNuevo__hero"></div>
 
         <div className="container">
           <div className="row">

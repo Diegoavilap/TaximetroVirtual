@@ -9,6 +9,7 @@ class CrearClienteForm extends React.Component {
           <div className="form-group">
             <label>Cedula Cliente</label>
             <input
+              id="cliente_id"
               onChange={this.props.onChange}
               className="form-control"
               type="text"
@@ -20,7 +21,7 @@ class CrearClienteForm extends React.Component {
           </div>
           <div className="row">
               <div className="col text-left ">
-                <button className="btn btn-primary" disabled={this.props.btn_start }>
+                <button id="crear_carrera" className="btn btn-primary" disabled={this.props.btn_start }>
                     Iniciar
                 </button>
               </div>
@@ -37,7 +38,7 @@ class CrearClienteForm extends React.Component {
           )}
         </form>
         {this.props.carrera && (
-          <div className="alert alert-success alert-dismissible fade show mt-4" role="alert">
+          <div id="msg_iniciar_carrera" className="alert alert-success alert-dismissible fade show mt-4" role="alert">
             <p>
               <strong>Su Carrera a iniciado, ¡Que tenga buen Viaje!</strong>
             </p>

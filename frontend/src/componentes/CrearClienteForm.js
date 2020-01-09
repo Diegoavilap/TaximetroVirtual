@@ -9,6 +9,7 @@ class CrearClienteForm extends React.Component {
           <div className="form-group">
             <label>Nombre</label>
             <input
+              id="nombre"
               onChange={this.props.onChange}
               className="form-control"
               type="text"
@@ -21,6 +22,7 @@ class CrearClienteForm extends React.Component {
           <div className="form-group">
             <label>Apellido</label>
             <input
+              id="apellido"
               onChange={this.props.onChange}
               className="form-control"
               type="text"
@@ -33,6 +35,7 @@ class CrearClienteForm extends React.Component {
           <div className="form-group">
             <label>Cedula</label>
             <input
+              id="cedula"
               onChange={this.props.onChange}
               className="form-control"
               type="number"
@@ -42,7 +45,7 @@ class CrearClienteForm extends React.Component {
             />
           </div>
 
-          <button onClick={this.handleClick} className="btn btn-primary">
+          <button id="btn-crear-cliente" onClick={this.handleClick} className="btn btn-primary">
             Registrar
           </button>
 
