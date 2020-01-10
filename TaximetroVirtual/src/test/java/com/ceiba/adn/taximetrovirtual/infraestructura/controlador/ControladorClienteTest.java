@@ -1,7 +1,10 @@
 package com.ceiba.adn.taximetrovirtual.infraestructura.controlador;
 
+import static org.hamcrest.Matchers.hasSize;
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
 import static org.springframework.test.web.servlet.result.MockMvcResultHandlers.print;
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
 import org.junit.Before;
@@ -75,5 +78,12 @@ public class ControladorClienteTest {
 				.andExpect(status().isPreconditionFailed());
 	}
 	
-	
+	@Test
+	@Sql(executionPhase = ExecutionPhase.BEFORE_TEST_METHOD, scripts = "/scripts/crear-clientes-listar.sql")
+	@Sql(executionPhase = ExecutionPhase.AFTER_TEST_METHOD, scripts = "/scripts/cliente-data.sql")
+	public void cuandoPeticionListarClientesEntoncesDeberiaRetornarLista() throws Exception {
+		// arrange - act - assert
+		mockMvc.perform(get(URL_BASE).contentType(MediaType.APPLICATION_JSON).accept(MediaType.APPLICATION_JSON))
+				.andDo(print()).andExpect(jsonPath("$.*", hasSize(3))).andExpect(status().isOk());
+	}
 }

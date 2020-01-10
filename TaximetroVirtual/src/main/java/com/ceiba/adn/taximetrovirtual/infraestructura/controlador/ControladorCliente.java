@@ -2,8 +2,6 @@ package com.ceiba.adn.taximetrovirtual.infraestructura.controlador;
 
 import java.util.List;
 
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.util.MimeTypeUtils;
@@ -35,7 +33,6 @@ import io.swagger.annotations.ApiResponse;
 @RequestMapping("/api/cliente")
 @Api(tags = "cliente")
 public class ControladorCliente {
-	private static final Logger LOG = LogManager.getLogger(ControladorCliente.class);
 	private final ManejadorCrearCliente servicioCrearCliente;
 	private final ManejadorListarCliente servicioListarCliente;
 
@@ -53,8 +50,7 @@ public class ControladorCliente {
 	}
 
 	@GetMapping(produces = MimeTypeUtils.APPLICATION_JSON_VALUE)
-	public ResponseEntity<List<Cliente>> consultarBanos() {
-		LOG.warn("La consulta funciona correctamente");
+	public ResponseEntity<List<Cliente>> consultarClientes() {
 		return new ResponseEntity<>(this.servicioListarCliente.ejecutar(), HttpStatus.OK);
 	}
 }

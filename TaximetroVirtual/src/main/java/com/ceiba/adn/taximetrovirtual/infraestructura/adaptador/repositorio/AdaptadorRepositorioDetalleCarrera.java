@@ -1,8 +1,5 @@
 package com.ceiba.adn.taximetrovirtual.infraestructura.adaptador.repositorio;
 
-import java.util.List;
-import java.util.stream.Collectors;
-
 import org.springframework.stereotype.Component;
 
 import com.ceiba.adn.taximetrovirtual.dominio.modelo.DetalleCarrera;
@@ -22,14 +19,6 @@ public class AdaptadorRepositorioDetalleCarrera implements RepositorioDetalleCar
 	public DetalleCarrera crear(DetalleCarrera detalleCarrera) {
 		DetalleCarreraEntidad entidad = MapeadorDetalleCarreraEntidad.mapearAEntidad(detalleCarrera);
 		return MapeadorDetalleCarreraEntidad.mapearAModelo(detalleCarreraJPA.save(entidad)); 
-	}
-
-	@Override
-	public List<DetalleCarrera> listar() {
-		List<DetalleCarreraEntidad> entidades = detalleCarreraJPA.findAll();
-		return entidades.stream().map(MapeadorDetalleCarreraEntidad::mapearAModelo).collect(Collectors.toList());
-	}
-	
-	
+	}	
 	
 }

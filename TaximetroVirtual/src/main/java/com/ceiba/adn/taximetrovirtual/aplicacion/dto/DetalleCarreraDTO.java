@@ -38,10 +38,5 @@ public class DetalleCarreraDTO {
 	public BigDecimal getCosto() {
 		return costo;
 	}
-
-	public void setCarrera(Long carreraId) {
-		this.carreraId = carreraId;
-	}
-
 	
 }

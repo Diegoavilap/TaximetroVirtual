@@ -1,7 +1,5 @@
 package com.ceiba.adn.taximetrovirtual.dominio.puerto.repositorio;
 
-import java.util.List;
-
 import com.ceiba.adn.taximetrovirtual.dominio.modelo.DetalleCarrera;
 
 public interface RepositorioDetalleCarrera {
@@ -14,11 +12,4 @@ public interface RepositorioDetalleCarrera {
 	 */
 	public DetalleCarrera crear(DetalleCarrera detalleCarrera);
 
-	/**
-	 * Método que se encarga de traer los DetalleCarrera que se encuentran
-	 * persitidos
-	 * 
-	 * @return
-	 */
-	public List<DetalleCarrera> listar();
 }

@@ -1,6 +1,5 @@
 package com.ceiba.adn.taximetrovirtual.dominio.puerto.repositorio;
 
-import java.util.List;
 import java.util.Optional;
 
 import com.ceiba.adn.taximetrovirtual.dominio.modelo.Carrera;
@@ -23,12 +22,5 @@ public interface RepositorioCarrera {
 	 *         Optional vacio si no encuentra una Carrera con ese id
 	 */
 	public Optional<Carrera> buscarPorId(Long id);
-
-	/**
-	 * Metodo que permite traer el listado de carreras que se encuentra persitido
-	 * 
-	 * @return List<Carrera> Listado de carreras registrado
-	 */
-	public List<Carrera> listar();
 
 }

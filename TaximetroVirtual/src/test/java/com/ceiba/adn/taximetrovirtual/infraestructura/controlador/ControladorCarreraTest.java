@@ -59,5 +59,18 @@ public class ControladorCarreraTest {
 				.andDo(print())
 				.andExpect(status().isCreated());
 	}
+	
+	@Test
+	@Sql(executionPhase = ExecutionPhase.AFTER_TEST_METHOD, scripts = "/scripts/cliente-data.sql")
+	public void cuandoPeticionCrearCarreraCedulaNoExistenteEntoncesDeberiaLanzarExcepcion() throws Exception {
+		// arrange
+		CarreraDTO carreraDTO = new CarreraDTOTestDataBuilder().build();
 
+		// act - assert
+		mockMvc.perform(post(URL_BASE)
+				.contentType(MediaType.APPLICATION_JSON)
+				.content(objectMapperTest.writeValueAsString(carreraDTO)))
+				.andDo(print())
+				.andExpect(status().isBadRequest());
+	}
 }
