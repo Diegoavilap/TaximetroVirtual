@@ -23,11 +23,11 @@ public class ServicioCrearDetalleCarrera {
 	
 	public DetalleCarrera crearDetalleCarrera(DetalleCarrera detalleCarrera) {
 		Carrera carreraRegistrada = repositorioCarrera.buscarPorId(detalleCarrera.getCarreraId())
-				.orElseThrow(() -> {
+				.<ExcepcionCarreraNoEncontrada>orElseThrow(() -> {
 					ExcepcionCarreraNoEncontrada excepcion = new ExcepcionCarreraNoEncontrada(
 						"No se encuentra Registrada una carrera con el id proporcionado");
 					LOG.warn(excepcion);
-					throw excepcion;
+					throw excepcion; 
 				});
 		detalleCarrera.setCarreraId(carreraRegistrada.getId());
 		detalleCarrera.setFechaFin(LocalDateTime.now());

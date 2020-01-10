@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.ceiba.adn.taximetrovirtual.aplicacion.mapeador.MapeadorCarreraTest" tests="4" skipped="0" failures="0" errors="0" timestamp="2020-01-07T14:30:26" hostname="DIEGO-AVILA" time="0.032">
+<testsuite name="com.ceiba.adn.taximetrovirtual.aplicacion.mapeador.MapeadorCarreraTest" tests="4" skipped="0" failures="0" errors="0" timestamp="2020-01-10T16:18:04" hostname="DIEGO-AVILA" time="0.031">
   <properties/>
-  <testcase name="cuandoCarreraDTOEsNuloEntoncesRetornaNulo" classname="com.ceiba.adn.taximetrovirtual.aplicacion.mapeador.MapeadorCarreraTest" time="0.009"/>
-  <testcase name="cuandoCarreraEsNuloEntoncesRetornaNulo" classname="com.ceiba.adn.taximetrovirtual.aplicacion.mapeador.MapeadorCarreraTest" time="0.0"/>
-  <testcase name="cuandoCarreraOkEntoncesRetornaCarreraDTO" classname="com.ceiba.adn.taximetrovirtual.aplicacion.mapeador.MapeadorCarreraTest" time="0.021"/>
-  <testcase name="cuandoCarreraDTOesOkEntoncesRetornaCarrera" classname="com.ceiba.adn.taximetrovirtual.aplicacion.mapeador.MapeadorCarreraTest" time="0.0"/>
+  <testcase name="cuandoCarreraDTOEsNuloEntoncesRetornaNulo" classname="com.ceiba.adn.taximetrovirtual.aplicacion.mapeador.MapeadorCarreraTest" time="0.008"/>
+  <testcase name="cuandoCarreraEsNuloEntoncesRetornaNulo" classname="com.ceiba.adn.taximetrovirtual.aplicacion.mapeador.MapeadorCarreraTest" time="0.001"/>
+  <testcase name="cuandoCarreraOkEntoncesRetornaCarreraDTO" classname="com.ceiba.adn.taximetrovirtual.aplicacion.mapeador.MapeadorCarreraTest" time="0.017"/>
+  <testcase name="cuandoCarreraDTOesOkEntoncesRetornaCarrera" classname="com.ceiba.adn.taximetrovirtual.aplicacion.mapeador.MapeadorCarreraTest" time="0.001"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>

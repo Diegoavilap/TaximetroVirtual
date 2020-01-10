@@ -18,7 +18,6 @@ public class ServicioCrearCliente {
 	
 	public Cliente crearCliente(Cliente cliente) {
 		if (repositorio.existePorCedula(cliente.getCedula())) {
-			//throw new ExcepcionCedulaYaRegistrada(msgCedulaYaRegistrada);
 			ExcepcionCedulaYaRegistrada excepcion = new ExcepcionCedulaYaRegistrada(
 					msgCedulaYaRegistrada);
 				LOG.warn(excepcion);
